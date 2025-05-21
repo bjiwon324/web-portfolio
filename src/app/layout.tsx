@@ -1,5 +1,5 @@
-import type { Metadata } from "next"
-import "@/styles/base/index.scss"
+import type { Metadata } from "next";
+import "@/styles/base/index.scss";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -14,12 +14,12 @@ import "@/styles/base/index.scss"
 export const metadata: Metadata = {
   title: "jiwon-portfolio",
   description: "프론트엔드 & 디자이너 박지원의 포트폴리오 사이트입니다."
-}
+};
 
 export default function RootLayout({
   children
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="ko">
@@ -29,5 +29,5 @@ export default function RootLayout({
         {children}
       </body>
     </html>
-  )
+  );
 }
