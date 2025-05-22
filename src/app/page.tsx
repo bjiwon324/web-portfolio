@@ -1,63 +1,14 @@
 "use client";
-//중요!!
 
 import classNamesBind from "classnames/bind";
 import styles from "./page.module.scss";
+import useFullPage from "@/libs/hooks/useFullPage";
 import pageObjArray from "@/libs/constants/fullPageObjArray";
-import { useEffect, useRef, useState } from "react";
 
 const cx = classNamesBind.bind(styles);
 
 export default function FullPageEXample() {
-  const sectionRefs = useRef<(HTMLElement | null)[]>([]);
-  const wrapRef = useRef<HTMLDivElement | null>(null);
-  const isScrollingRef = useRef(false);
-
-  const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
-
-  useEffect(() => {
-    const wrapElement = wrapRef.current;
-
-    if (!wrapElement) {
-      return;
-    }
-
-    const handleWheel = (event: WheelEvent) => {
-      if (isScrollingRef.current) {
-        event.preventDefault();
-        return;
-      }
-      const direction = event.deltaY > 0 ? "down" : "up";
-
-      let nextIndex = currentSectionIndex;
-      if (direction === "down") {
-        nextIndex = Math.min(currentSectionIndex + 1, pageObjArray.length - 1);
-      } else {
-        nextIndex = Math.max(currentSectionIndex - 1, 0);
-      }
-
-      if (nextIndex !== currentSectionIndex) {
-        event.preventDefault();
-        isScrollingRef.current = true;
-        const targetSection = sectionRefs.current[nextIndex];
-
-        if (targetSection) {
-          targetSection.scrollIntoView({ behavior: "smooth" });
-
-          setTimeout(() => {
-            isScrollingRef.current = false;
-          }, 1000);
-        }
-        setCurrentSectionIndex(nextIndex);
-      }
-    };
-
-    wrapElement.addEventListener("wheel", handleWheel, { passive: false });
-
-    return () => {
-      wrapElement.removeEventListener("wheel", handleWheel);
-    };
-  }, [currentSectionIndex, pageObjArray.length]);
+ const {wrapRef,sectionRefs,currentSectionIndex, scrollToSection} = useFullPage(pageObjArray)
 
   return (
     <>
