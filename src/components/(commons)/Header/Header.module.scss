@@ -1,23 +1,47 @@
 .header {
    @include flexbox(between);
   width: 100%;
-  padding: 1.6rem 2rem;
+  padding: 0 2rem;
   position: fixed;
-background-color: #ffffff76;
-z-index: $header-z-index;
+  background-color: #ffffff76;
+  z-index: $header-z-index;
   
 }
 
 .header-wrapper {
   @include flexbox(between);
  width: 100%;
-  max-width: 1400rem;
+  max-width: 140rem;
+  margin: 0 auto;
 }
 nav ul.nav-list {
-
-  @include flexbox(between);
+  @include flexbox(end);
+  gap: 1rem;
 }
+.nav-item {
+   position: relative;
+}
+.nav-item::after {
+  content: '';
+position: absolute;
+left: 0;
+bottom: 0;
+width: 100%;
+transform: scaleX(0) translateX(0);
+height: 0.2rem;
+background-color: $primary-400;
+transition: all 0.3s;
+}
+
+.nav-item:hover::after {
+transform: scaleX(1);
+}
+
 .nav-item > a {
   @include text-style(1.8, 500);
-padding: 1.6rem 1rem ;
+padding: 1.6rem ;
+}
+
+.nav-item:hover a {
+  @include text-style(1.8, 500, $primary-900);
 }
