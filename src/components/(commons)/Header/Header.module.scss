@@ -1,0 +1,23 @@
+.header {
+   @include flexbox(between);
+  width: 100%;
+  padding: 1.6rem 2rem;
+  position: fixed;
+background-color: pink;
+z-index: $header-z-index;
+  
+}
+
+.header-wrapper {
+  @include flexbox(between);
+ width: 100%;
+  max-width: 1400rem;
+}
+nav ul.nav-list {
+
+  @include flexbox(between);
+}
+.nav-item > a {
+  @include text-style(1.8, 500);
+padding: 1.6rem 1rem ;
+}

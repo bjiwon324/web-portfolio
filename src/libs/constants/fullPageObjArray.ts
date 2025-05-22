@@ -1,6 +1,6 @@
 import { IPageObj } from "@/libs/types/_fullPageTypes";
 
-const pageObjArray: IPageObj[] = [
+const fullPageObjArray: IPageObj[] = [
   { name: "intro" },
   { name: "about" },
   { name: "skills" },
@@ -9,4 +9,4 @@ const pageObjArray: IPageObj[] = [
   { name: "contact" }
 ];
 
-export default pageObjArray;
+export default fullPageObjArray;
