@@ -396,7 +396,7 @@ body #tutorial .swiper-pagination {
   max-height: calc(var(--vh, 1vh) * 100 - 7.6rem); /* 동적 vh 사용 */
   overflow: auto;
 
-  @include respondTo(small) {
+  @include responsive("M") {
     max-height: calc(var(--vh, 1vh) * 100 - 8.3rem); /* small 사이즈에서 동적 vh 사용 */
   }
 }
