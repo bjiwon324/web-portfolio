@@ -1,1 +1,1 @@
-import "./fullPageObjArray";
+export *  from "./fullPageObjArray";
