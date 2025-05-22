@@ -5,9 +5,19 @@ import useToggle from "@/libs/hooks/toggle"
 
 const cx = classNames.bind(styles)
 
-export default function ToggleButton() {
-const [isLeft, toggleIsLeft] = useToggle(false)
+interface ToggleButtonType {
+  onClick: () => void;
+}
+
+export default function ToggleButton({onClick} : ToggleButtonType) {
+  const [isLeft, toggleIsLeft] = useToggle(false)
+  const handleClickToggle =() => {
+    onClick();
+    toggleIsLeft();
+    
+  }
+
   
 
-  return  <button className={cx("button-background",{isLeft})} onClick={toggleIsLeft}><div className={cx("inner")}></div></button>
+  return  <button className={cx("button-background",{isLeft})} onClick={handleClickToggle}><div className={cx("inner")}></div></button>
 }
