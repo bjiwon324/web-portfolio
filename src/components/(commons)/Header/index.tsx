@@ -2,7 +2,7 @@ import Image from "next/image"
 import styles from "./Header.module.scss"
 import classNames from "classnames/bind"
 import Link from "next/link"
-import {fullPageObjArray} from "@/libs/constants"
+import {FULL_PAGE_OBJ_ARRAY} from "@/libs/constants"
 import ToggleButton from "../ToggleButton"
 import { useDarkMode } from "@/libs/hooks"
 
@@ -27,7 +27,7 @@ const { theme, setTheme } = useDarkMode();
             <nav>
                <ul className={cx('nav-list')}>
                   <ToggleButton onClick={handleClickTheme}/>
-                  {fullPageObjArray.map((obj) =>
+                  {FULL_PAGE_OBJ_ARRAY.map((obj) =>
                      <li className={cx("nav-item")} key={obj.name}>
                         <Link href={"#" + obj.name}>{obj.name}</Link>
                      </li>)}
