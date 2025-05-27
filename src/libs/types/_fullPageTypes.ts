@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 type sectionsName =
   | "intro"
   | "about"
@@ -6,6 +8,7 @@ type sectionsName =
   | "feedback"
   | "contact";
 
-export interface IPageObj {
+export interface PageObj {
   name: sectionsName;
+  componenet : ReactNode
 }
