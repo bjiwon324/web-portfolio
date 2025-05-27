@@ -2,8 +2,8 @@
 
 import classNamesBind from "classnames/bind";
 import styles from "./page.module.scss";
-import useFullPage from "@/libs/hooks/useFullPage";
-import fullPageObjArray from "@/libs/constants/fullPageObjArray";
+import {useFullPage} from "@/libs/hooks";
+import {fullPageObjArray} from "@/libs/constants/fullPageObjArray";
 import Header from "@/components/(commons)/Header";
 
 const cx = classNamesBind.bind(styles);
@@ -28,7 +28,7 @@ export default function Home() {
               className={cx("full-section", `section${index}`, pageObj.name, {
                 active: index === currentSectionIndex
               })}>
-              <h1>{pageObj.name}</h1>
+              {pageObj.componenet}
             </section>
           ))}
         </main>

@@ -1,7 +1,7 @@
 import { useState } from "react"
 import styles from "./ToggleButton.module.scss"
 import classNames from "classnames/bind"
-import useToggle from "@/libs/hooks/toggle"
+import {useToggle} from "@/libs/hooks"
 
 const cx = classNames.bind(styles)
 

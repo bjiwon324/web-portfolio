@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "@/styles/base/index.scss";
+import { ThemeProvider } from "@/libs/providers/ThemeProvider";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -23,10 +24,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
+      <head>
+        
+      </head>
       <body
       // className={`${geistSans.variable} ${geistMono.variable}`}
       >
+<ThemeProvider>
         {children}
+        </ThemeProvider>
+     
       </body>
     </html>
   );

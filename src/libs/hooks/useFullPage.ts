@@ -3,7 +3,7 @@ import { useEffect, useRef, useState, useCallback } from "react";
 
 type PageArray = any[];
 
-const useFullPage = (pageObjArray: PageArray) => {
+export const useFullPage = (pageObjArray: PageArray) => {
   const sectionRefs = useRef<(HTMLElement | null)[]>([]);
   const wrapRef = useRef<HTMLDivElement | null>(null);
   const isScrollingRef = useRef(false);
@@ -73,8 +73,6 @@ const useFullPage = (pageObjArray: PageArray) => {
     scrollToSection,
   };
 };
-
-export default useFullPage;
 
 // const observer = new IntersectionObserver(
 //   entries => {
