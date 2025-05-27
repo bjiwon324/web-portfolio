@@ -1,0 +1,22 @@
+.text-box {
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+text-align: center;
+
+& h1 {
+  @include text-style(9.6,700,$primary-700);
+  margin-bottom: 1rem;
+}
+}
+
+.job-line {
+@include text-style(2.4,600,$point-orange);
+  width: 100%;
+
+  display: flex;
+justify-content: space-between;
+  align-items: center;
+  
+}
