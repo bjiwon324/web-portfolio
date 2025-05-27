@@ -12,7 +12,7 @@ export default function InTroSection() {
     <>
       <LeavesContainer>
         <div className={cx('text-box')}>
-          <h1>박지원</h1>
+          <h1 className={cx('name')}>박지원</h1>
           <div className={cx("job-line")}>
             <p className={cx('job')}>Front-end</p>
             <p className={cx('job')}>Desiner</p>

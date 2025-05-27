@@ -17,8 +17,65 @@
 .goHome {
   padding: 1rem;
 }
+.nav {
+@include flexbox(start);
+  
 
-nav ul.nav-list {
+}
+.hamburger {
+  display: none;
+  margin-left: 1rem;
+  gap: 0.3rem;
+  width: 1.6rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.is-active {
+    .line {
+      transform-origin:center;
+    }
+    .line:nth-child(1) {
+      transform: translateY(0.5rem) rotate(45deg);
+    }
+
+    .line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .line:nth-child(3) {
+      transform: translateY(-0.5rem) rotate(-45deg);
+    }
+  }
+}
+
+.line {
+  width: 100%; // 필요 시 고정값으로 바꿔도 됨 (예: 1.2rem)
+  height: 0.2rem;
+  background-color: $primary;
+  display: block;
+  // border-radius: 10rem;
+  transform-origin: right; 
+  transition: all 0.3s ease-in-out;
+
+  // 우측 정렬 명시 (필요할 경우)
+  align-self: flex-end;
+
+  &:first-child {
+    transform: scaleX(0.7);
+  }
+
+  &:nth-child(2) {
+    transform: scaleX(1);
+  }
+
+  &:last-child {
+    transform: scaleX(0.5);
+  }
+}
+
+.nav-list {
   @include flexbox(end);
   gap: 1rem;
 }
@@ -50,6 +107,8 @@ nav ul.nav-list {
 .nav-item:hover a {
   @include text-style(1.8, 500, $primary-700);
 }
+
+
 body[data-theme='dark'] .header  {
   
 & .logo  svg  path {
@@ -64,6 +123,31 @@ fill: $point-orange;
  & .nav-item:hover > a {
    @include text-style(1.8, 500, $primary-300);
 
+}
+
+}
+
+@include responsive('T') {
+  .nav-list {
+    gap: 0.8rem;
+  }
+  .nav-item > a {
+    padding: 1rem;
+  }
+  
+}
+@include responsive('M') {
+.nav-list{
+  > * {
+    display: none;
+  }
+
+  > *:first-child {
+    display: block;
+  }
+}
+.hamburger {
+    @include column-flexbox(end, end); 
 }
 
 }
