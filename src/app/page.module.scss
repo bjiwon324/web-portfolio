@@ -15,19 +15,17 @@
   align-items: center;
 background-color: $background-white;
 
-  // 섹션 간 구분을 위한 예시 배경색 (실제 디자인에 맞게 수정하세요)
-  // &는 부모 선택자(.section*)를 참조합니다.
+  // &.active {
+  //   border: 5px solid gold;
+  // }
+}
 
-  &.active {
-    border: 5px solid gold;
-  }
+body[data-theme='dark'] .wrap .full-section {
+  background-color: $text-black;
+  color: $background-white;
 }
 
 //초기 next.js css 파일,삭제해야함
-
-// @media (prefers-color-scheme: dark) {
-//   /* 테마 변경 시 사용 */
-// }
 
 // /* Enable hover only on non-touch devices */
 // @media (hover: hover) and (pointer: fine) {

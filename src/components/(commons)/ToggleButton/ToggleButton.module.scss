@@ -17,12 +17,16 @@ transform: translateX(0);
 }
 
 &.isLeft {
-  background-color: $primary-600;
   & .inner {
 transform: translateX(80%);
-background-color: $primary-200;
 }
 }
 
 }
+body[data-theme='dark'] .button-background {
+  background-color: $primary-600;
+& .inner {
+  background-color: $primary-200;
 
+}
+}
