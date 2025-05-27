@@ -3,7 +3,8 @@
   width: 100%;
   padding: 0 2rem;
   position: fixed;
-  background-color: #ffffff76;
+ 
+  backdrop-filter: blur(5px);
   z-index: $header-z-index;
 }
 
@@ -13,6 +14,10 @@
   max-width: 140rem;
   margin: 0 auto;
 }
+.goHome {
+  padding: 1rem;
+}
+
 nav ul.nav-list {
   @include flexbox(end);
   gap: 1rem;
@@ -43,5 +48,22 @@ nav ul.nav-list {
 }
 
 .nav-item:hover a {
-  @include text-style(1.8, 500, $primary-900);
+  @include text-style(1.8, 500, $primary-700);
+}
+body[data-theme='dark'] .header  {
+  
+& .logo  svg  path {
+fill: $point-orange;
+  //  filter:brightness(10);
+}
+
+
+ & .nav-item > a {
+  color: $background-white;
+ }
+ & .nav-item:hover > a {
+   @include text-style(1.8, 500, $primary-300);
+
+}
+
 }
