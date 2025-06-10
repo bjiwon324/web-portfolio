@@ -1,5 +1,6 @@
 .textarea-field {
-  @include flexbox(start);
+  @include column-flexbox(start, start);
+  @include text-style(1.6, 400);
   width: 100%;
   gap: 1rem;
 }
@@ -28,6 +29,10 @@
 
 .error-message {
   @include text-style(1.4, solid, $point-orange);
+}
+
+body[data-theme="dark"] .label {
+  color: $primary-400;
 }
 
 body[data-theme="dark"] .textarea {
