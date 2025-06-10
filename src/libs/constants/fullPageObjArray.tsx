@@ -1,13 +1,16 @@
 import { PageObj } from "@/libs/types";
 import InTroSection from "@/components/(domains)/home/Intro";
-import About from "@/components/(domains)/home/about";
+import AboutSection from "@/components/(domains)/home/About";
+import FeedBackSection from "@/components/(domains)/home/Feedback";
+import ContactSection from "@/components/(domains)/home/Contact";
+import ProjectSection from "@/components/(domains)/home/Project";
+import SkillsSection from "@/components/(domains)/home/Skills";
 
 export const FULL_PAGE_OBJ_ARRAY: PageObj[] = [
-  { name: "intro" ,componenet:<InTroSection/>},
-  { name: "about" ,componenet:<About/>},
-  { name: "skills", componenet: <About/>},
-  { name: "projects" ,componenet:<About/>},
-  { name: "feedback" ,componenet:<About/>},
-  { name: "contact" ,componenet:<About/>}
+  { name: "intro", component: <InTroSection /> },
+  { name: "about", component: <AboutSection /> },
+  { name: "skills", component: <SkillsSection /> },
+  { name: "projects", component: <ProjectSection /> },
+  { name: "feedback", component: <FeedBackSection /> },
+  { name: "contact", component: <ContactSection /> }
 ];
-
