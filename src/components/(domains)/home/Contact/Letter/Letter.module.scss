@@ -1,0 +1,85 @@
+.letter {
+  background-color: $background-white;
+  width: 90%;
+  height: 50%;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, 30%) scale(1);
+  opacity: 0.6;
+  transition:
+    transform 1s ease,
+    opacity 1s ease;
+  transition-delay: 0.2s;
+
+  &.open {
+    transform: translate(-50%, -2%);
+    height: auto;
+    opacity: 1;
+    z-index: 10;
+  }
+
+  &-inner {
+    width: 50rem;
+    margin: 0 auto;
+  }
+
+  &-title {
+    padding-top: 10rem;
+    @include text-style(14, 400, $primary-700);
+    @include flexbox(center, end);
+    gap: 1rem;
+    font-family: var(--font-Dynalight);
+    line-height: 9rem;
+    &::after {
+      content: "";
+      width: 2rem;
+      height: 2rem;
+      border-radius: 5rem;
+      background-color: $point-orange;
+    }
+  }
+
+  & .more-info {
+    margin: 0 auto;
+    width: 100%;
+    @include text-style(1.6, 500, $primary);
+
+    &-list {
+      @include column-flexbox(start);
+
+      width: 100%;
+
+      gap: 1rem;
+    }
+
+    &-item {
+      text-align: left;
+      width: 100%;
+      &-title {
+        font-weight: 600;
+        color: $text-black;
+        margin-right: 1rem;
+      }
+    }
+    .copyright {
+      margin: 5rem;
+      text-align: center;
+      @include text-style(1.4, 400, $primary-300);
+    }
+  }
+}
+
+body[data-theme="dark"] .letter {
+  background-color: $text-black;
+
+  &-title {
+    color: $background-white;
+  }
+  & .more-info {
+    color: $primary-400;
+    &-item-title {
+      color: $background-white;
+    }
+  }
+}

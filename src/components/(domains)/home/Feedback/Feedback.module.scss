@@ -1,0 +1,20 @@
+.button-list {
+  @include flexbox(between);
+  @include text-style(2, 500, $text-black);
+  width: 100%;
+  max-width: 140rem;
+  padding: 4rem 0 4rem;
+
+  &-left {
+    @include flexbox(start);
+    gap: 3.2rem;
+  }
+
+  & .selected {
+    font-weight: 600;
+  }
+}
+
+body[data-theme="dark"] .button-list .button-list-item button {
+  color: $background-white;
+}

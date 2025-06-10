@@ -1,0 +1,42 @@
+.input-field {
+  @include column-flexbox(start, start);
+  width: 100%;
+  gap: 0.5rem;
+}
+.label {
+  @include text-style(1.4, 500, $primary-600);
+}
+
+.input {
+  @include text-style(1.6, 400, $primary-800);
+  width: 100%;
+  padding: 1.6rem 2rem;
+  background-color: $primary-200;
+  border-radius: 1.3rem;
+
+  &:focus {
+    outline: 1px solid $primary-800;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+  }
+
+  &.error {
+    border: 1px solid $point-orange;
+  }
+
+  & .error-message {
+    @include text-style(1.4, solid, $point-orange);
+  }
+}
+body[data-theme="dark"] .label {
+  color: $primary-400;
+}
+body[data-theme="dark"] .input {
+  background-color: $primary;
+  color: $primary-200;
+  &:focus {
+    outline: 1px solid $primary-300;
+  }
+}

@@ -1,0 +1,62 @@
+.list-item {
+  width: 50rem;
+  height: 50rem;
+  padding: 2rem;
+  border-radius: 2rem;
+  background: $primary-200;
+  box-shadow: 12px 12px 20px 0px rgba(66, 87, 68, 0.5);
+
+  .main {
+    cursor: pointer;
+  }
+
+  .title-line {
+    @include flexbox(start, end);
+    position: relative;
+    gap: 1rem;
+
+    & .role {
+      padding: 0.5rem 1rem;
+      @include text-style(1.6, 400, $background-white);
+      align-items: flex-end;
+      gap: 1rem;
+      border-radius: 1.5rem;
+      background: var(--point-orange, #e95026);
+    }
+
+    & .logo-img {
+      position: absolute;
+      top: 0rem;
+      right: 0rem;
+    }
+  }
+
+  .skill {
+    &-wrapper {
+      margin-top: 3rem;
+    }
+    &-title {
+      @include text-style(1.8, 500);
+    }
+
+    &-list {
+      @include flexbox(start);
+      width: 85%;
+      gap: 1rem;
+      padding: 1rem 0;
+      flex-wrap: wrap;
+    }
+    &-item {
+      @include text-style(1.4, 600, $text-black);
+      padding: 0.4rem 0.8rem;
+      border-radius: 1.5rem;
+      border: 1px dashed $primary;
+    }
+  }
+  .description {
+    @include text-style(1.6, 400);
+    margin: 1rem 0;
+    white-space: wrap;
+    word-break: keep-all;
+  }
+}
