@@ -9,7 +9,7 @@ const cx = classNames.bind(styles);
 
 interface FeedbackSectionProps {}
 
-type ShowingStatus = "project" | "acquaintance";
+export type ShowingStatus = "project" | "acquaintance";
 
 export default function FeedBackSection() {
   const [showingStatus, setShowingStatus] = useState<ShowingStatus>("project");
@@ -29,7 +29,7 @@ export default function FeedBackSection() {
                 handleClickShowingStatus(e.currentTarget.id as ShowingStatus)
               }
               className={cx({ selected: showingStatus === "project" })}>
-              프로젝트 멤버
+              프로젝트/스터디 멤버
             </button>
           </li>
           <li className={cx("button-list-item")}>
@@ -49,7 +49,7 @@ export default function FeedBackSection() {
           </Link>
         </li>
       </ul>
-      <CardList />
+      <CardList showingStatus={showingStatus} />
     </>
   );
 }

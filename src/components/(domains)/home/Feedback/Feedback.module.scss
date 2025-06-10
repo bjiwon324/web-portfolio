@@ -4,6 +4,7 @@
   width: 100%;
   max-width: 140rem;
   padding: 4rem 0 4rem;
+  margin: 0 auto;
 
   &-left {
     @include flexbox(start);
