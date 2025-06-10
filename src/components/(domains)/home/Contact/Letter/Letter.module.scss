@@ -1,8 +1,8 @@
 .letter {
   background-color: $background-white;
-  width: 90%;
-  height: 50%;
   position: absolute;
+  width: 90%;
+  height: 60%;
   top: 0%;
   left: 50%;
   transform: translate(-50%, 30%) scale(1);
@@ -11,6 +11,7 @@
     transform 1s ease,
     opacity 1s ease;
   transition-delay: 0.2s;
+  overflow: hidden;
 
   &.open {
     transform: translate(-50%, -2%);

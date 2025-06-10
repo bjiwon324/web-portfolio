@@ -56,7 +56,9 @@
   & .contact-title {
     @include text-style(14, 400, $background-white);
     position: absolute;
-
+    white-space: nowrap;
+    width: 100%;
+    text-align: center;
     opacity: 1;
     top: 30%;
     left: 50%;

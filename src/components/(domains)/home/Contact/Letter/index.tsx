@@ -1,7 +1,8 @@
 import Header from "@/components/(commons)/Header";
-import EmailForm from "./EmailForm";
+import EmailForm from "../EmailForm";
 import styles from "./Letter.module.scss";
 import classNames from "classnames/bind";
+import { useState } from "react";
 
 const cx = classNames.bind(styles);
 
@@ -11,8 +12,10 @@ interface LetterProps {
 }
 
 //전체적으로 애니메이션 딜레이 + z-index 딜레이 함수 추가
-
-function MoreInfo() {
+interface MoreInfoProps {
+  isSubmitted: boolean;
+}
+function MoreInfo({ isSubmitted }: MoreInfoProps) {
   return (
     <div className={cx("more-info")}>
       <ul className={cx("more-info-list")}>
@@ -25,8 +28,9 @@ function MoreInfo() {
         <li className={cx("more-info-item")}>
           <p>
             <span className={cx("more-info-item-title")}>전화번호</span>
-            010-3905-1779
-            {/* 이메일 전송시 번호 보이게 - 안보일때는 '이메일을 보내주시면 번호가 보입니다.' 안내 문구 */}
+            {isSubmitted
+              ? "010-3905-1779"
+              : "이메일을 보내주시면 번호가 보입니다."}
           </p>
         </li>
       </ul>
@@ -38,13 +42,18 @@ function MoreInfo() {
 }
 
 export default function Letter({ isOpen, titleFont }: LetterProps) {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const handleSubmitted = () => {
+    setIsSubmitted(true);
+  };
+
   return (
     <article className={cx("letter", { open: isOpen })}>
-      <Header />
+      {/* <Header /> */}
       <h2 className={cx("letter-title", titleFont)}>Contact me</h2>
       <div className={cx("letter-inner")}>
-        <EmailForm />
-        <MoreInfo />
+        <EmailForm handleSubmitted={handleSubmitted} />
+        <MoreInfo isSubmitted={isSubmitted} />
       </div>
     </article>
   );
