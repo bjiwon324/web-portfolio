@@ -1,16 +1,6 @@
 import type { Metadata } from "next";
 import "@/styles/base/index.scss";
-import { ThemeProvider } from "@/libs/providers/ThemeProvider";
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
+import { Providers } from "./Providers";
 
 export const metadata: Metadata = {
   title: "jiwon-portfolio",
@@ -24,16 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <head>
-        
-      </head>
-      <body
-      // className={`${geistSans.variable} ${geistMono.variable}`}
-      >
-<ThemeProvider>
-        {children}
-        </ThemeProvider>
-     
+      <head></head>
+      <body>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

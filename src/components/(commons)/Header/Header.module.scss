@@ -3,9 +3,9 @@
   width: 100%;
   padding: 0 2rem;
   position: fixed;
- 
   backdrop-filter: blur(5px);
   z-index: $header-z-index;
+  box-shadow: 0px 2px 5px rgba($primary-300, $alpha: 0.3);
 }
 
 .header-wrapper {
@@ -18,13 +18,11 @@
   padding: 1rem;
 }
 .nav {
-@include flexbox(start);
-  
-
+  @include flexbox(start);
 }
 .hamburger {
   display: none;
-  margin-left: 1rem;
+  margin-left: 1.6rem;
   gap: 0.3rem;
   width: 1.6rem;
 
@@ -34,7 +32,7 @@
 
   &.is-active {
     .line {
-      transform-origin:center;
+      transform-origin: center;
     }
     .line:nth-child(1) {
       transform: translateY(0.5rem) rotate(45deg);
@@ -56,22 +54,22 @@
   background-color: $primary;
   display: block;
   // border-radius: 10rem;
-  transform-origin: right; 
+  transform-origin: right;
   transition: all 0.3s ease-in-out;
 
   // 우측 정렬 명시 (필요할 경우)
   align-self: flex-end;
 
   &:first-child {
-    transform: scaleX(0.7);
+    transform: scale(0.7, 1);
   }
 
   &:nth-child(2) {
-    transform: scaleX(1);
+    transform: scale(1, 1);
   }
 
   &:last-child {
-    transform: scaleX(0.5);
+    transform: scale(0.5, 1);
   }
 }
 
@@ -108,46 +106,45 @@
   @include text-style(1.8, 500, $primary-700);
 }
 
+body[data-theme="dark"] .header {
+  box-shadow: 0px 2px 5px rgba($primary, $alpha: 0.3);
 
-body[data-theme='dark'] .header  {
-  
-& .logo  svg  path {
-fill: $point-orange;
-  //  filter:brightness(10);
+  & .logo svg path {
+    fill: $point-orange;
+    //  filter:brightness(10);
+  }
+
+  & .nav-item > a {
+    color: $background-white;
+  }
+  & .nav-item:hover > a {
+    @include text-style(1.8, 500, $primary-300);
+  }
+
+  & .hamburger .line {
+    background-color: $background-white;
+  }
 }
 
-
- & .nav-item > a {
-  color: $background-white;
- }
- & .nav-item:hover > a {
-   @include text-style(1.8, 500, $primary-300);
-
-}
-
-}
-
-@include responsive('T') {
+@include responsive("T") {
   .nav-list {
     gap: 0.8rem;
   }
   .nav-item > a {
     padding: 1rem;
   }
-  
 }
-@include responsive('M') {
-.nav-list{
-  > * {
-    display: none;
-  }
+@include responsive("M") {
+  .nav-list {
+    > * {
+      display: none;
+    }
 
-  > *:first-child {
-    display: block;
+    > *:first-child {
+      display: block;
+    }
   }
-}
-.hamburger {
-    @include column-flexbox(end, end); 
-}
-
+  .hamburger {
+    @include column-flexbox(end, end);
+  }
 }
