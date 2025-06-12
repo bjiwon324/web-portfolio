@@ -6,9 +6,9 @@ export const WHIPLASH: Project = {
   team: "private",
   period: "3일",
   address: "",
-  gitrepo: "",
+  gitRepo: "https://github.com/bjiwon324/whiplash-fan-page",
   logo: "/icons/Whiplash-logo.svg",
-  skills: ["HTML", "CSS", "Javascript", "JQuery"],
+  skills: ["photoshop", "illustrator", "HTML", "CSS", "Javascript", "JQuery"],
   pointDescriptions: ["화승 웹사이트를 벤치마킹한 whiplash 영화의 팬페이지"]
 };
 
@@ -17,7 +17,7 @@ export const BINDER: Project = {
   skills: [
     "Next.js",
     "Vercel",
-    "SASS",
+    "Sass(SCSS)",
     "React Query",
     "Axios",
     "React hook form",
@@ -37,8 +37,8 @@ export const BINDER: Project = {
   team: ["기획자 1 명", "디자이너 1명", "프론트엔드 2명", "백엔드 2명"],
   period: "2024.09 - 2024.10",
   address: "https://www.bin-finder.net/",
-  gitrepo: "https://github.com/binder-binFinder/binder-front-end",
-  troubleshootings: [
+  gitRepo: "https://github.com/binder-binFinder/binder-front-end",
+  troubleShootings: [
     {
       title: "",
       problemSituation: "",
@@ -47,9 +47,26 @@ export const BINDER: Project = {
     }
   ],
   myJobs: [
-    { description: "", img: "" },
-    { description: "", img: "" },
-    { description: "", img: "" }
+    {
+      description:
+        "Kakao map Api와 연동하여 쓰레기통의 위치를 지도에 나타내었습니다.",
+      img: "/images/binder/bin-location.png"
+    },
+    {
+      description:
+        "react hook form 을 활용하여 쓰레기통 등록 기능을 구현하였습니다.",
+      img: "/images/binder/add-new-location.png"
+    },
+    {
+      description:
+        "UX/UI를 고려하여 드롭다운 모달로 신고 기능을 구현하였습니다.",
+      img: "/images/binder/report-bin.png"
+    },
+    {
+      description:
+        "공통 컴포넌트를 적극활용하여 관리자 페이지의 심사기능을 구현하였습니다.",
+      img: "/images/binder/judgment-bin.png"
+    }
   ]
 };
 
@@ -59,7 +76,7 @@ export const GLOBAL_NOMAD: Project = {
   team: ["프론트엔드 5명"],
   period: "2024.03 - 2024.04",
   address: "https://global-nomad.vercel.app/",
-  gitrepo: "https://github.com/Codeit-sprint2-4-5/global-nomad",
+  gitRepo: "https://github.com/Codeit-sprint2-4-5/global-nomad",
   skills: [
     "Typescript",
     "Next.js",
@@ -75,7 +92,7 @@ export const GLOBAL_NOMAD: Project = {
   ],
   logo: "/icons/global-nomad-logo.svg",
   textLogo: "/icons/global-nomad-text-logo.svg",
-  troubleshootings: [
+  troubleShootings: [
     {
       title: "서버 데이터 기반 추가 요청 시스템 구현(derived state)",
       problemSituation:
@@ -88,12 +105,9 @@ export const GLOBAL_NOMAD: Project = {
         },
         {
           littleTitle: "TanStack Query 도입 ",
-          text: "팀원들과 함께 TanStack Query를 학습하고 도입하였습니다. 이를 통해 서버로부터 받은 데이터를 기반으로 추가 데이터 요청이 자동으로 처리되도록 설정하였으며, 데이터 간의 의존성을 관리하면서 상태의 일관성을 유지하는 데 큰 도움을 받았습니다."
+          text: "협의를 통해해 TanStack Query를 학습하고 도입하였습니다. 이를 통해 서버로부터 받은 데이터를 기반으로 추가 데이터 요청이 자동으로 처리되도록 설정하였으며, 데이터 간의 의존성을 관리하면서 상태의 일관성을 유지하는 데 큰 도움을 받았습니다."
         },
-        {
-          littleTitle: "사용자 경험 개선을 위한 UI 최적화",
-          text: "서버로부터 데이터를 기다리는 동안 사용자가 기다림을 인식할 수 있도록 스켈레톤 UI를 도입하고, 페이지 상단에 로딩 바를 표시하는 기능을 추가했습니다. 이를 통해 데이터 로딩 중에도 시각적인 피드백을 제공하여 사용자 경험을 크게 향상시켰습니다."
-        },
+
         {
           littleTitle: "관심사의 분리 및 코드 가독성 향상",
           text: "TanStack Query를 사용함으로써 비즈니스 로직과 상태관리 로직을 분리하였고, 이로 인해 코드의 가독성이 높아졌으며, 데이터 관리의 복잡성도 크게 감소하였습니다. 상태관리가 자동화되면서 애플리케이션의 성능 최적화와 유지보수도 수월해졌습니다."
@@ -101,7 +115,6 @@ export const GLOBAL_NOMAD: Project = {
       ],
       result: [
         "TanStack Query를 통해 데이터 간의 의존성 문제를 해결하고, 상태관리의 복잡성을 대폭 줄였습니다.",
-        "사용자에게 더 나은 인터랙션을 제공하기 위한 스켈레톤 UI와 로딩 바 도입으로 사용자 경험이 개선되었습니다.",
         "관심사의 분리를 통해 코드 가독성이 향상되었고, 서버 상태관리 효율성이 크게 증대되었습니다."
       ]
     },
@@ -132,7 +145,27 @@ export const GLOBAL_NOMAD: Project = {
     }
   ],
   myJobs: [
-    { description: "", img: "" },
+    {
+      description:
+        "디바이스 화면 크기에 따라 변화하는 컴포넌트를 구현하였습니다. 이 이미지는 데스크탑과 테블릿사이즈 일 때 디자인입니다.",
+      img: "/images/global-nomad/floating-box.png"
+    },
+    {
+      description: "이 이미지는 모바일 화면에서의 디자인입니다.",
+      img: "/images/global-nomad/floating-box-mobile.png"
+    },
+    {
+      description: "모달 컴포넌트를 공통컴포넌트로 묶어 구현했습니다.",
+      img: "/images/global-nomad/modal1.png"
+    },
+    {
+      description: "제작 중 트러블 슈팅을 하단에 작성해두었습니다.",
+      img: "/images/global-nomad/modal2.png"
+    },
+    {
+      description: "체험 추가, 수정 페이지를 구현했습니다.",
+      img: "/images/global-nomad/add-activity.png"
+    },
     { description: "", img: "" },
     { description: "", img: "" }
   ]
@@ -141,10 +174,10 @@ export const GLOBAL_NOMAD: Project = {
 export const TASKIFY: Project = {
   name: "Taskify",
   role: "프론트엔드",
-  team: "프론트엔드 5명",
+  team: ["프론트엔드 5명"],
   period: "2024.01 - 2024.02",
   address: "https://taskify-three-xi.vercel.app/",
-  gitrepo: "https://github.com/bjiwon324/taskify",
+  gitRepo: "https://github.com/bjiwon324/taskify",
   skills: [
     "Typescript",
     "Next.js",
@@ -158,7 +191,7 @@ export const TASKIFY: Project = {
   ],
   logo: "/icons/taskify-logo.svg",
   textLogo: "/icons/Taskify-text-logo.png",
-  troubleshootings: [
+  troubleShootings: [
     {
       title: "페이지네이션",
       problemSituation:
@@ -198,10 +231,10 @@ export const TASKIFY: Project = {
 export const ROLLING: Project = {
   name: "Rolling",
   role: "프론트엔드",
-  team: "프론트엔드 4명",
+  team: ["프론트엔드 4명"],
   period: "2023.12 - 2023.12",
   address: "https://fluffy-shortbread-07838a.netlify.app/",
-  gitrepo: " https://github.com/codeit-sprint2-team-12/team-12-rolling",
+  gitRepo: " https://github.com/codeit-sprint2-team-12/team-12-rolling",
   skills: [
     "Javascript",
     "React",
@@ -215,7 +248,7 @@ export const ROLLING: Project = {
   ],
   logo: "/icons/rolling-logo.svg",
   textLogo: "/icons/rolling-text-logo.svg",
-  troubleshootings: [
+  troubleShootings: [
     {
       title: "",
       problemSituation: "",

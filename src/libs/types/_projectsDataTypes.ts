@@ -6,12 +6,12 @@ export interface Project {
   role: string;
   period: string;
   address: string;
-  gitrepo: string;
+  gitRepo: string;
   skills: string[];
   pointDescriptions: string[];
   logo: string;
   textLogo?: string;
-  troubleshootings?: Troubleshooting[];
+  troubleShootings?: Troubleshooting[];
   myJobs?: MyJob[];
 }
 
