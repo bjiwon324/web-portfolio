@@ -25,7 +25,7 @@ interface ButtonProps
 }
 
 export default forwardRef<HTMLButtonElement, ButtonProps>(function Button(
-  { children, size, isPrimary = false, isError = false, ...props },
+  { children, size, isPrimary = false, isError = false, className, ...props },
   ref
 ) {
   return (
@@ -36,7 +36,8 @@ export default forwardRef<HTMLButtonElement, ButtonProps>(function Button(
         "button",
         { error: isError },
         { primary: isPrimary },
-        size
+        size,
+        className
       )}>
       {children}
     </button>

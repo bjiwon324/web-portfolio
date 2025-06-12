@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "andong";
+  src:
+    url("/fonts/andong-subset.woff2") format("woff2"),
+    url("/fonts/andong-subset.woff") format("woff");
+}
+
+.text {
+  @include text-style(4.8, 400, $primary-900);
+  align-self: center;
+  font-family: "andong";
+  margin: 4rem 0;
+  white-space: wrap;
+  word-break: keep-all;
+
+  line-height: 5rem; /* 104.167% */
+}
+
+.main {
+  @include flexbox(between, start);
+  width: 100%;
+  max-width: 140rem;
+  margin: 0 auto;
+  padding: 10rem 2rem 0;
+
+  & .title {
+    @include text-style(2, 600);
+  }
+}
+
+@include responsive("M") {
+  .main {
+    flex-direction: column;
+    .text {
+      width: 90%;
+    }
+  }
+}
+body[data-theme="dark"] {
+  .text {
+    color: $primary-300;
+  }
+}

@@ -11,6 +11,7 @@ const cx = classNamesBind.bind(styles);
 export default function Home() {
   const { wrapRef, sectionRefs, currentSectionIndex, scrollToSection } =
     useFullPage(FULL_PAGE_OBJ_ARRAY);
+
   const { theme, setTheme } = useDarkMode();
   const handleClickTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");

@@ -39,7 +39,10 @@ export default function CardList({ showingStatus }: CardListProps) {
   } = useQuery({
     queryKey: ["feedback"],
     queryFn: async () => {
-      const { data, error } = await supabase.from("feedback").select("*");
+      const { data, error } = await supabase
+        .from("feedback")
+        .select("*")
+        .order("created_at", { ascending: false });
       if (error) throw new Error(error.message);
 
       return data;
@@ -54,6 +57,7 @@ export default function CardList({ showingStatus }: CardListProps) {
     showingStatus === "project" ? projectFeedbackData : feedbackData;
 
   const handleScroll = (event: React.UIEvent<HTMLUListElement>) => {
+    //조금 더 고치고 싶음.... 페이지네이션?
     event.stopPropagation();
   };
 
@@ -72,7 +76,7 @@ export default function CardList({ showingStatus }: CardListProps) {
             key={index}
             className={cx("card-box")}>
             <Card
-              Emoji={feedback.emoji}
+              emoji={feedback.emoji}
               name={feedback.writer}
               feedback={feedback.feedback}
               createdAt={feedback.created_at}

@@ -1,0 +1,94 @@
+.wrapper {
+  @include pos-center();
+  @include flexbox();
+  background-color: #ddd;
+  border-radius: 2rem;
+  filter: blur(4);
+  // top: 50%;
+  // left: 0;
+  // transform: translateY(-50%);
+  width: 30rem;
+  height: 30rem;
+}
+
+.active-wrapper {
+  @include pos-center();
+  width: 50rem;
+  height: 50rem;
+  padding: 2rem;
+  border-radius: 2rem;
+  background: $primary-200;
+  box-shadow: 12px 12px 20px 0px rgba(66, 87, 68, 0.5);
+
+  .more {
+    @include flexbox(start);
+    @include text-style(1.6, 600, $primary-900);
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+  }
+
+  .main {
+    cursor: pointer;
+  }
+
+  .title-line {
+    @include flexbox(start, end);
+    position: relative;
+    gap: 1rem;
+
+    & .role {
+      padding: 0.5rem 1rem;
+      @include text-style(1.6, 400, $background-white);
+      align-items: flex-end;
+      gap: 1rem;
+      border-radius: 1.5rem;
+      background: var(--point-orange, #e95026);
+    }
+
+    & .logo-img {
+      position: absolute;
+      top: 0rem;
+      right: 0rem;
+    }
+  }
+
+  .skill {
+    &-wrapper {
+      margin: 3rem 0;
+    }
+    &-title {
+      @include text-style(1.8, 500);
+    }
+
+    &-list {
+      @include flexbox(start);
+      width: 85%;
+      gap: 1rem;
+      padding: 1rem 0;
+      flex-wrap: wrap;
+    }
+    &-item {
+      @include text-style(1.4, 600, $text-black);
+      padding: 0.4rem 0.8rem;
+      border-radius: 1.5rem;
+      border: 1px dashed $primary;
+    }
+  }
+  .description {
+    @include text-style(1.6, 400);
+    list-style-type: disc;
+    margin: 1rem 0 1rem 2rem;
+    white-space: wrap;
+    word-break: keep-all;
+  }
+}
+body[data-theme="dark"] {
+  .wrapper {
+    background-color: $primary;
+  }
+  .description,
+  .skill-title {
+    color: $text-black;
+  }
+}

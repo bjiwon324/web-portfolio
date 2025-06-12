@@ -3,7 +3,7 @@
   @include text-style(2, 500, $text-black);
   width: 100%;
   max-width: 140rem;
-  padding: 4rem 0 4rem;
+  padding: 4rem 0 2rem;
   margin: 0 auto;
 
   &-left {
@@ -13,9 +13,14 @@
 
   & .selected {
     font-weight: 600;
+    color: $point-orange;
   }
 }
 
 body[data-theme="dark"] .button-list .button-list-item button {
   color: $background-white;
+
+  &.selected {
+    color: $point-orange;
+  }
 }

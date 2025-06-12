@@ -19,6 +19,7 @@
 }
 .nav {
   @include flexbox(start);
+  position: relative;
 }
 .hamburger {
   display: none;
@@ -136,15 +137,32 @@ body[data-theme="dark"] .header {
 }
 @include responsive("M") {
   .nav-list {
-    > * {
-      display: none;
-    }
+    opacity: 0;
+    position: absolute;
+    flex-wrap: wrap;
+    top: 4rem;
+    right: -5rem;
+    padding: 1rem 2rem;
+    transition: all 0.3s;
+    justify-content: center;
+  }
 
-    > *:first-child {
-      display: block;
-    }
+  .nav-list.show {
+    opacity: 1;
+    width: fit-content;
+    height: auto;
+    right: -2rem;
+    background-color: $primary-200;
+    // background-color: pink;
+
+    // display: inline-block;
   }
   .hamburger {
     @include column-flexbox(end, end);
+  }
+  body[data-theme="dark"] {
+    .nav-list {
+      background-color: $primary;
+    }
   }
 }

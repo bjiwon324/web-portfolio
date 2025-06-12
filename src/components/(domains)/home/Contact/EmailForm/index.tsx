@@ -49,21 +49,24 @@ export default function EmailForm({ handleSubmitted }: EmailFormProps) {
           id="email"
           type="email"
           placeholder="이메일을 입력해주세요"
-          errorMessage="이메일은은 필수입니다"
+          errorMessage={errors.email?.message}
+          isError={!!errors.email}
           {...register("email", { required: "이메일은은 필수입니다" })}
         />
 
         <Input
           id="name"
           placeholder="이름을 입력해 주세요"
-          errorMessage="이름은 필수입니다"
+          errorMessage={errors.name?.message}
+          isError={!!errors.name}
           {...register("name", { required: "이름은 필수입니다" })}
         />
 
         <Textarea
           id="message"
           placeholder="이메일 내용을 입력해 주세요"
-          errorMessage="메시지는 필수입니다"
+          errorMessage={errors.message?.message}
+          isError={!!errors.message}
           {...register("message", { required: "메세지는 필수입니다" })}
         />
         <Button
