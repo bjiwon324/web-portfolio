@@ -3,9 +3,9 @@ import styles from "./Contact.module.scss";
 import { Dynalight } from "next/font/google";
 import { useToggle } from "@/libs/hooks";
 import Letter from "./Letter";
-import useModal from "@/libs/hooks/useModal";
 
 const DynalightFont = Dynalight({
+  subsets: ["latin"],
   display: "swap",
   variable: "--font-Dynalight",
   weight: "400"
