@@ -1,0 +1,22 @@
+.list {
+  @include pos-center();
+  width: 100%;
+  max-width: 140rem;
+  margin: 0 auto;
+  gap: 1rem;
+
+  .item {
+    display: inline-block;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+
+    &:first-child {
+      @include flexbox();
+      margin: 0 auto 12rem;
+
+      @include responsive("M") {
+        width: 100%;
+      }
+    }
+  }
+}

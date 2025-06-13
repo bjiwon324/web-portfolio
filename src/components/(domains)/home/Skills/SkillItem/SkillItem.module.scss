@@ -1,0 +1,59 @@
+.box {
+  @include flexbox();
+  gap: 1rem;
+  flex-wrap: nowrap;
+  padding: 1.6rem;
+  transition: transform 0.3s ease;
+
+  // background-color: $primary-200;
+  & .img-box {
+    position: relative;
+    width: 5rem;
+    height: 5rem;
+  }
+  & img {
+    object-fit: contain;
+  }
+
+  &.selected {
+    transform: translateY(-20%);
+    @include column-flexbox();
+    & .img-box {
+      width: 10rem;
+      height: 10rem;
+    }
+    & .description {
+      display: block;
+    }
+  }
+
+  &:hover .name {
+    color: $point-orange;
+  }
+}
+
+.name {
+  @include text-style(1.8, 600);
+}
+
+.description {
+  @include text-style(1.4);
+  min-width: 30rem;
+  white-space: nowrap;
+  display: none;
+
+  @include responsive("M") {
+    white-space: wrap;
+    word-break: keep-all;
+    min-width: none;
+  }
+}
+body[data-theme="dark"] {
+  .name,
+  .description {
+    color: $background-white;
+  }
+
+  .img-box {
+  }
+}
