@@ -15,7 +15,10 @@
   margin: 0 auto;
 }
 .goHome {
-  padding: 1rem;
+  padding: 1rem 0;
+}
+.header-left {
+  @include flexbox(end);
 }
 .nav {
   @include flexbox(start);

@@ -6,6 +6,8 @@ import { FULL_PAGE_OBJ_ARRAY } from "@/libs/constants";
 import ToggleButton from "../ToggleButton";
 import { useToggle } from "@/libs/hooks";
 import { ThemeType } from "@/libs/types";
+import Modal from "../Modal";
+import useModal from "@/libs/hooks/useModal";
 
 const cx = classNames.bind(styles);
 interface HeaderProps {
@@ -36,20 +38,21 @@ export default function Header({
               className={cx("logo")}
               width={100}
               height={30}
-              style={{ objectFit: "fill" }}
-              src={"/icons/logo1.svg"}
+              style={{}}
+              src={"/icons/logo.svg"}
               alt="홈페이지로 이동"
             />
           </Link>
-          <ToggleButton onClick={onClickTheme} />
-
-          <button
-            onClick={handleShowNavList}
-            className={cx("hamburger", { "is-active": isShowNavList })}>
-            <span className={cx("line")}></span>
-            <span className={cx("line")}></span>
-            <span className={cx("line")}></span>
-          </button>
+          <div className={cx("header-left")}>
+            <ToggleButton onClick={onClickTheme} />
+            <button
+              onClick={handleShowNavList}
+              className={cx("hamburger", { "is-active": isShowNavList })}>
+              <span className={cx("line")}></span>
+              <span className={cx("line")}></span>
+              <span className={cx("line")}></span>
+            </button>
+          </div>
         </div>
       </header>
     );
@@ -66,7 +69,7 @@ export default function Header({
             width={100}
             height={30}
             style={{ objectFit: "fill" }}
-            src={"/icons/logo1.svg"}
+            src={"/icons/logo.svg"}
             alt="홈페이지로 이동"
           />
         </Link>
