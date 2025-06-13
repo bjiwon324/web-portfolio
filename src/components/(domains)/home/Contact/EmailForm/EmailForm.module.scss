@@ -9,4 +9,12 @@
     width: 100%;
     margin-top: 2rem;
   }
+
+  @include responsive("T") {
+    padding: 2rem 0;
+
+    & > button {
+      margin-top: 1rem;
+    }
+  }
 }

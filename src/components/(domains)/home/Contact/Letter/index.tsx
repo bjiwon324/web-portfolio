@@ -2,7 +2,7 @@ import Header from "@/components/(commons)/Header";
 import EmailForm from "../EmailForm";
 import styles from "./Letter.module.scss";
 import classNames from "classnames/bind";
-import { useState } from "react";
+import { lazy, useEffect, useState } from "react";
 
 const cx = classNames.bind(styles);
 
@@ -43,13 +43,30 @@ function MoreInfo({ isSubmitted }: MoreInfoProps) {
 
 export default function Letter({ isOpen, titleFont }: LetterProps) {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [letterZindex, setLetterZindex] = useState(false);
+
+  useEffect(() => {
+    let timer: ReturnType<typeof setTimeout>;
+
+    if (isOpen) {
+      timer = setTimeout(() => {
+        setLetterZindex(true);
+      }, 500);
+    } else {
+      setLetterZindex(false);
+    }
+
+    return () => clearTimeout(timer);
+  }, [isOpen]);
+
   const handleSubmitted = () => {
     setIsSubmitted(true);
   };
 
   return (
-    <article className={cx("letter", { open: isOpen })}>
+    <article className={cx("letter", { open: isOpen }, { lazy: letterZindex })}>
       {/* <Header /> */}
+
       <h2 className={cx("letter-title", titleFont)}>Contact me</h2>
       <div className={cx("letter-inner")}>
         <EmailForm handleSubmitted={handleSubmitted} />

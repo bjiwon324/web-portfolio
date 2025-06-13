@@ -3,6 +3,7 @@ import styles from "./Contact.module.scss";
 import { Dynalight } from "next/font/google";
 import { useToggle } from "@/libs/hooks";
 import Letter from "./Letter";
+import useModal from "@/libs/hooks/useModal";
 
 const DynalightFont = Dynalight({
   display: "swap",
@@ -20,22 +21,20 @@ export default function ContactSection() {
   return (
     <>
       <div className={cx("background")}>
-        <div className={cx("background-wrap")}>
-          <div
-            className={cx("background-top", { open: isOpen })}
-            onClick={setIsToggle}>
+        <div
+          className={cx("background-wrap")}
+          onClick={setIsToggle}>
+          <div className={cx("background-top", { open: isOpen })}>
             <h2 className={cx("contact-title", DynalightFont.variable)}>
               Contact me
             </h2>
           </div>
-          <div
-            className={cx("background-bottom")}
-            onClick={setIsToggle}></div>
-          <Letter
-            isOpen={isOpen}
-            titleFont={DynalightFont.variable}
-          />
+          <div className={cx("background-bottom")}></div>
         </div>
+        <Letter
+          isOpen={isOpen}
+          titleFont={DynalightFont.variable}
+        />
       </div>
     </>
   );
