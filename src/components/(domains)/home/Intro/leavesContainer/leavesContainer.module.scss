@@ -1,54 +1,55 @@
 .leaf {
-   background-image: url('/images/leaves1.png');
-   background-repeat: no-repeat;
-   background-size: cover;
+  background-image: url("/images/leaves1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   will-change: background-position;
-  animation-name:fall-cycle;
+  animation-name: fall-cycle;
   animation-timing-function: steps(5);
-  animation-iteration-count:infinite;
-z-index: 2;
+  animation-iteration-count: infinite;
+  z-index: 2;
 }
-
 
 .leaf-container {
   position: absolute;
   pointer-events: none;
-	will-change: transform;
+  will-change: transform;
   animation: leaf-fall;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-
 }
 
 @keyframes fall-cycle {
-
-	100% {
-		background-position:  center 100%;
-	}
-	
+  100% {
+    background-position: center 100%;
+  }
 }
 
 @keyframes leaf-fall {
   0% {
     transform: translate(0, 0);
-    opacity: 1;}
+    opacity: 1;
+  }
   25% {
-transform: translate(4vw, 25vh);    
-    opacity: 0.75;}
+    transform: translate(4vw, 25vh);
+    opacity: 0.75;
+  }
   50% {
-		transform: translate(0vw, 50vh);
-    opacity: 0.5;}
+    transform: translate(0vw, 50vh);
+    opacity: 0.5;
+  }
   75% {
-		transform: translate(8vw, 75vh);
-    opacity: 0.25;}
+    transform: translate(8vw, 75vh);
+    opacity: 0.25;
+  }
   100% {
-	transform: translate(0vw, 100vh);
-    opacity: 0;}
+    transform: translate(0vw, 100vh);
+    opacity: 0;
+  }
 }
 
 .leaves-container {
   position: relative;
-    width: 100%;
-    height: 100%;
-     overflow: hidden;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
