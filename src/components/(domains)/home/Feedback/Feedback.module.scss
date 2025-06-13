@@ -15,6 +15,27 @@
     font-weight: 600;
     color: $point-orange;
   }
+
+  @include responsive("T") {
+    font-size: 1.8rem;
+    flex-wrap: wrap;
+    white-space: nowrap;
+    gap: 2rem;
+
+    &-left {
+      gap: 2rem;
+    }
+  }
+
+  @include responsive("M") {
+    & li:last-child {
+      width: 100%;
+
+      & > a {
+        float: right;
+      }
+    }
+  }
 }
 
 body[data-theme="dark"] .button-list .button-list-item button {

@@ -40,6 +40,11 @@
     @include text-style(1.4, 400, $primary-400);
     align-self: flex-end;
   }
+
+  @include responsive("M") {
+    height: fit-content;
+    aspect-ratio: auto;
+  }
 }
 
 .card::before,
