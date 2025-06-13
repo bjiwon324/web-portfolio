@@ -1,0 +1,126 @@
+.letter {
+  background-color: $background-white;
+  position: absolute;
+  width: 90%;
+  max-width: 80rem;
+  height: 60%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0.6;
+  transition:
+    transform 0.8s ease,
+    opacity 0.8s ease;
+  transition-delay: 0s;
+
+  overflow: hidden;
+  z-index: -3;
+
+  &.open {
+    transform: translate(-50%, 2%);
+    top: 0;
+    height: auto;
+    opacity: 1;
+    transition:
+      transform 1s ease,
+      opacity 1s ease;
+    transition-delay: 0.1s;
+    &.lazy {
+      z-index: 10;
+    }
+  }
+
+  &-inner {
+    width: 100%;
+    max-width: 50rem;
+    margin: 0 auto;
+  }
+
+  &-title {
+    padding-top: 5rem;
+    @include text-style(14, 400, $primary-700);
+    @include flexbox(center, end);
+    gap: 1rem;
+    font-family: var(--font-Dynalight);
+    line-height: 9rem;
+    &::after {
+      content: "";
+      width: 2rem;
+      height: 2rem;
+      border-radius: 5rem;
+      background-color: $point-orange;
+    }
+  }
+
+  & .more-info {
+    margin: 0 auto;
+    width: 100%;
+
+    @include text-style(1.6, 500, $primary);
+
+    &-list {
+      @include column-flexbox(start);
+
+      width: 100%;
+
+      gap: 1rem;
+    }
+
+    &-item {
+      text-align: left;
+      width: 100%;
+      &-title {
+        font-weight: 600;
+        color: $text-black;
+        margin-right: 1rem;
+      }
+    }
+    .copyright {
+      margin: 5rem;
+      text-align: center;
+      @include text-style(1.4, 400, $primary-300);
+    }
+  }
+  @include responsive("T") {
+    &-title {
+      font-size: 7rem;
+      line-height: 7rem;
+      &::after {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+    .more-info {
+      .copyright {
+        margin: 3rem;
+      }
+    }
+  }
+
+  @include responsive("M") {
+    height: 20rem;
+    &.open {
+      transform: translate(-50%, 5%);
+      z-index: 3;
+    }
+
+    &-title {
+      padding-top: 4rem;
+    }
+  }
+}
+
+body[data-theme="dark"] .letter {
+  background-color: #444;
+  padding: 0 2rem;
+
+  &-title {
+    color: $background-white;
+  }
+  & .more-info {
+    color: $primary-400;
+    &-item-title {
+      color: $background-white;
+    }
+  }
+}

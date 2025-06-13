@@ -1,0 +1,80 @@
+.background {
+  position: relative;
+  background-color: $primary-200;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  overflow: hidden;
+
+  &-wrap {
+    position: absolute;
+    width: 60%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    aspect-ratio: 45/32;
+    background-color: $primary-700;
+
+    @include responsive("T") {
+      width: calc(100% - 4rem);
+    }
+  }
+
+  &-top {
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 65%;
+    background: url("/icons/letter-top.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 5;
+
+    transform-origin: top;
+    transform: rotateX(0deg);
+    transition: transform 1s ease;
+    perspective: 1000px;
+    &.open {
+      transform: rotateX(180deg);
+      & .contact-title {
+        opacity: 0;
+      }
+    }
+  }
+  &-bottom {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url("/icons/contact-background.svg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 4;
+  }
+
+  & .contact-title {
+    @include text-style(14, 400, $background-white);
+    position: absolute;
+    white-space: nowrap;
+    width: 100%;
+    text-align: center;
+    opacity: 1;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    font-family: var(--font-Dynalight);
+    transition: all 0.4s;
+
+    @include responsive("T") {
+      font-size: 10rem;
+    }
+
+    @include responsive("M") {
+      font-size: 7rem;
+    }
+  }
+}
+body[data-theme="dark"] .background {
+  background-color: $text-black;
+}

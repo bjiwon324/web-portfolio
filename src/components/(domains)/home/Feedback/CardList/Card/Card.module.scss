@@ -1,0 +1,66 @@
+.card {
+  @include column-flexbox(start, start);
+  position: relative;
+  // min-width: 29rem;
+  padding: 2rem;
+  gap: 1rem;
+  flex-shrink: 0;
+  background-color: $card-backGround;
+  aspect-ratio: 1.618/1;
+
+  &-emoji-box {
+    font-size: 3.2rem;
+    margin: 1rem auto;
+    // min-height: 3.7rem;
+    width: 100%;
+    text-align: center;
+    gap: 1rem;
+    align-self: stretch;
+  }
+
+  &-text-box {
+    @include column-flexbox(start, start);
+    align-self: stretch;
+    flex-grow: 1;
+
+    gap: 1rem;
+    &-writer {
+      @include text-style(1.8, 600, $primary-700);
+    }
+
+    &-feedback {
+      @include text-style(1.6, 400, $primary-700);
+
+      white-space: wrap;
+      word-break: keep-all;
+    }
+  }
+
+  &-date {
+    @include text-style(1.4, 400, $primary-400);
+    align-self: flex-end;
+  }
+
+  @include responsive("M") {
+    height: fit-content;
+    aspect-ratio: auto;
+  }
+}
+
+.card::before,
+.card::after {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 99rem;
+  background-color: $primary-700;
+}
+
+.card::before {
+  left: 1rem;
+}
+.card::after {
+  right: 1rem;
+}

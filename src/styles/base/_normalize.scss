@@ -23,8 +23,14 @@ html {
 
 body {
   margin: 0;
-  background-color: #fff;
+  background-color: $background-white;
   color: $text-black;
+  font-size: 1.6rem;
+}
+
+body[data-theme="dark"] {
+  color: $background-white;
+  background-color: $text-black;
 }
 
 /**
@@ -398,7 +404,9 @@ body #tutorial .swiper-pagination {
   overflow: auto;
 
   @include responsive("M") {
-    max-height: calc(var(--vh, 1vh) * 100 - 8.3rem); /* small 사이즈에서 동적 vh 사용 */
+    max-height: calc(
+      var(--vh, 1vh) * 100 - 8.3rem
+    ); /* small 사이즈에서 동적 vh 사용 */
   }
 }
 

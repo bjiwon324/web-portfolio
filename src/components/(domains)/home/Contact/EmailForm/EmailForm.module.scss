@@ -1,0 +1,20 @@
+.form {
+  @include column-flexbox();
+  width: 100%;
+  margin: 0 auto;
+  padding: 5rem 0;
+  gap: 1rem;
+
+  & > button {
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  @include responsive("T") {
+    padding: 2rem 0;
+
+    & > button {
+      margin-top: 1rem;
+    }
+  }
+}

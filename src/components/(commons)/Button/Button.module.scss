@@ -1,0 +1,36 @@
+.button {
+  @include flexbox();
+  @include text-style(2, 600, $primary-200);
+
+  border-radius: 1rem;
+  background: $button-backGround;
+
+  &.M {
+    width: 10rem;
+    padding: 0.7rem;
+    gap: 1rem;
+  }
+
+  &.L {
+    width: 100%;
+    padding: 1.2rem 2.4rem;
+  }
+
+  &:hover,
+  &:focus,
+  &.primary {
+    background-color: $primary-800;
+  }
+
+  :disabled {
+    opacity: 0.4;
+  }
+
+  &.error {
+    background-color: $point-orange;
+  }
+
+  @include responsive("M") {
+    @include text-style(1.6, 500);
+  }
+}

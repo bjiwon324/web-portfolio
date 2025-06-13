@@ -1,0 +1,47 @@
+.button-list {
+  @include flexbox(between);
+  @include text-style(2, 500, $text-black);
+  width: 100%;
+  max-width: 140rem;
+  padding: 4rem 0 2rem;
+  margin: 0 auto;
+
+  &-left {
+    @include flexbox(start);
+    gap: 3.2rem;
+  }
+
+  & .selected {
+    font-weight: 600;
+    color: $point-orange;
+  }
+
+  @include responsive("T") {
+    font-size: 1.8rem;
+    flex-wrap: wrap;
+    white-space: nowrap;
+    gap: 2rem;
+
+    &-left {
+      gap: 2rem;
+    }
+  }
+
+  @include responsive("M") {
+    & li:last-child {
+      width: 100%;
+
+      & > a {
+        float: right;
+      }
+    }
+  }
+}
+
+body[data-theme="dark"] .button-list .button-list-item button {
+  color: $background-white;
+
+  &.selected {
+    color: $point-orange;
+  }
+}

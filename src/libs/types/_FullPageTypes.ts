@@ -10,5 +10,5 @@ type sectionsName =
 
 export interface PageObj {
   name: sectionsName;
-  componenet: ReactNode;
+  component: ReactNode;
 }

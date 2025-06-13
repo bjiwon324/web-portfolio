@@ -1,0 +1,44 @@
+.card-list {
+  // display: grid;
+  // grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  @include flexbox(start, start);
+  gap: 1rem;
+  flex-wrap: wrap;
+  max-height: 75vh;
+  // gap: 2rem 2rem;
+  width: 100%;
+  // height: 70vh;
+  max-width: 140rem;
+  // min-height: 50vh;
+  margin: 0 auto;
+  overflow-y: scroll;
+  // 수직 간격 같게 조정 필요.......
+  padding-bottom: 4rem;
+  // box-shadow: inset 0px -10rem 10px rgba($color: $text-black, $alpha: 1);
+
+  &::-webkit-scrollbar {
+    // display: none;
+  }
+}
+
+.card-box {
+  width: calc(25% - 1rem);
+  // height: auto;
+}
+
+.blank-text {
+  @include text-style(1.6, 400);
+}
+
+@include responsive("T") {
+  .card-box {
+    width: calc(50% - 1rem);
+  }
+}
+
+@include responsive("M") {
+  .card-box {
+    width: 100%;
+    // max-width: 35rem;
+  }
+}

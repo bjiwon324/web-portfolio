@@ -1,0 +1,30 @@
+.projects-list {
+  width: 100%;
+}
+
+.swiper-container {
+  :global(.swiper) {
+    max-width: 100rem;
+    height: 73vh;
+    top: 10rem;
+    @include responsive("T") {
+      width: 100%;
+    }
+  }
+  :global(.swiper-wrapper) {
+    height: 73vh;
+  }
+
+  :global(.swiper-slide) {
+    transform: translate(50%);
+  }
+
+  :global(.swiper-slide-active) {
+    z-index: 3 !important;
+  }
+}
+body[data-theme="dark"] {
+  .list-item {
+    color: $primary-200;
+  }
+}

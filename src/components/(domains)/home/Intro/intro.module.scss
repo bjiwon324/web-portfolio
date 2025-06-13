@@ -1,44 +1,36 @@
 .text-box {
-position: absolute;
-left: 50%;
-top: 50%;
-transform: translate(-50%, -50%);
-text-align: center;
+  @include column-flexbox();
+  width: inherit;
+  height: 100%;
 
-& .name {
-  @include text-style(9.6,700,$primary-700);
-  margin-bottom: 1rem;
-}
+  text-align: center;
 
-.job-line {
-@include text-style(2.4,600,$point-orange);
-  width: 100%;
-  display: flex;
-justify-content: space-between;
-  align-items: center;
-
-}
-}
-
-
-
-
-@include responsive("T"){
-  .text-box {
-
- & .name{
-  @include text-style(7,700,$primary-700);
-  white-space: nowrap;
- }
-
- & .job-line {
-  @include text-style(2, 500, $point-orange);
-  gap: 1rem;
- }
-}
-}
-
-
-body[data-theme='dark'] .name{
-    color: $primary-300;
+  & .name {
+    @include text-style(9.6, 700, $primary-700);
+    margin-bottom: 1rem;
   }
+
+  .job-line {
+    @include text-style(2.4, 600, $point-orange);
+    @include flexbox();
+    gap: 2rem;
+  }
+}
+
+@include responsive("T") {
+  .text-box {
+    & .name {
+      @include text-style(7, 700, $primary-700);
+      white-space: nowrap;
+    }
+
+    & .job-line {
+      @include text-style(2, 500, $point-orange);
+      gap: 1rem;
+    }
+  }
+}
+
+body[data-theme="dark"] .name {
+  color: $primary-300;
+}

@@ -4,26 +4,30 @@
   overflow: hidden;
 }
 
-
-
 .full-section {
   width: 100%;
-  height: 100vh; 
-  display: flex;
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center;
-background-color: $background-white;
+  height: 100vh;
+  padding: 6rem 2rem;
+  overflow-y: scroll;
+  // background-color: $background-white;
 
   // &.active {
   //   border: 5px solid gold;
   // }
 }
-
-body[data-theme='dark'] .wrap .full-section {
-  background-color: $text-black;
-  color: $background-white;
+.full-section::-webkit-scrollbar {
+  display: none;
 }
+
+.full-section:first-child,
+.full-section:last-child {
+  padding: 0;
+}
+
+// body[data-theme="dark"] .wrap .full-section {
+//   background-color: $text-black;
+//   color: $background-white;
+// }
 
 //초기 next.js css 파일,삭제해야함
 

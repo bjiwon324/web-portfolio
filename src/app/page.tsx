@@ -2,21 +2,30 @@
 
 import classNamesBind from "classnames/bind";
 import styles from "./page.module.scss";
-import {useFullPage} from "@/libs/hooks";
-import {FULL_PAGE_OBJ_ARRAY} from "@/libs/constants/fullPageObjArray";
+import { useDarkMode, useFullPage } from "@/libs/hooks";
+import { FULL_PAGE_OBJ_ARRAY } from "@/libs/constants/fullPageObjArray";
 import Header from "@/components/(commons)/Header";
 
 const cx = classNamesBind.bind(styles);
 
 export default function Home() {
- const {wrapRef,sectionRefs,currentSectionIndex, scrollToSection} = useFullPage(FULL_PAGE_OBJ_ARRAY)
+  const { wrapRef, sectionRefs, currentSectionIndex, scrollToSection } =
+    useFullPage(FULL_PAGE_OBJ_ARRAY);
+
+  const { theme, setTheme } = useDarkMode();
+  const handleClickTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
 
   return (
     <>
       <div
         ref={wrapRef}
         className={cx("wrap")}>
-                      <Header/>
+        <Header
+          onClickTheme={handleClickTheme}
+          theme={theme}
+        />
         <main className={cx("main")}>
           {FULL_PAGE_OBJ_ARRAY.map((pageObj, index) => (
             <section
@@ -28,7 +37,7 @@ export default function Home() {
               className={cx("full-section", `section${index}`, pageObj.name, {
                 active: index === currentSectionIndex
               })}>
-              {pageObj.componenet}
+              {pageObj.component}
             </section>
           ))}
         </main>
