@@ -4,34 +4,45 @@ import styles from "./ProjectItem.module.scss";
 import classNames from "classnames/bind";
 import Link from "next/link";
 import Image from "next/image";
+import { separateSkills } from "@/libs/utils";
 
 const cx = classNames.bind(styles);
 
 interface ProjectItemProps {
   project: Project;
-  isActive: boolean;
+  isActive?: boolean;
+  isList?: boolean;
 }
 
-export default function ProjectItem({ project, isActive }: ProjectItemProps) {
-  if (!isActive) {
+export default function ProjectItem({
+  project,
+  isActive,
+  isList
+}: ProjectItemProps) {
+  const { matchedSkills, unmatchedSkills } = separateSkills(project.skills);
+
+  if (!isActive && !isList) {
     return (
       <div className={cx("wrapper")}>
         <Image
-          width={150}
-          height={150}
+          fill
           src={project.logo}
           alt={project.name + " 로고"}
+          style={{ objectFit: "contain" }}
         />
       </div>
     );
   }
   return (
-    <div className={cx("active-wrapper")}>
+    <Link
+      href={`project/${project.name}`}
+      className={cx({ "active-wrapper": isActive }, { "list-item": isList })}>
       <div className={cx("title-line")}>
         <Image
           src={project.textLogo || project.logo}
           width={150}
           height={40}
+          style={{ objectFit: "contain" }}
           alt="프로젝트 로고"></Image>
         <span className={cx("role")}>{project.role}</span>
         <Image
@@ -44,11 +55,27 @@ export default function ProjectItem({ project, isActive }: ProjectItemProps) {
       <div className={cx("skill-wrapper")}>
         <h4 className={cx("skill-title")}>skills</h4>
         <ul className={cx("skill-list")}>
-          {project.skills.map(skill => (
+          {matchedSkills.map(skill => (
             <li
-              key={skill}
-              className={cx("skill-item")}>
-              {skill}
+              key={skill.name}
+              className={cx("skill-item", "matched")}>
+              {skill.logo && (
+                <Image
+                  src={skill.logo}
+                  alt={`${skill.name} 로고`}
+                  width={30}
+                  height={30}
+                  title={skill.name}
+                  style={{ objectFit: "contain" }}
+                />
+              )}
+            </li>
+          ))}
+          {unmatchedSkills.map(skillName => (
+            <li
+              key={skillName}
+              className={cx("skill-item", "unmatched")}>
+              <span>{skillName}</span>
             </li>
           ))}
         </ul>
@@ -62,9 +89,8 @@ export default function ProjectItem({ project, isActive }: ProjectItemProps) {
           </li>
         ))}
       </ul>
-      <Link
-        className={cx("more")}
-        href={`project/${project.name}`}>
+
+      <span className={cx("more")}>
         자세히 보러 가기
         <Image
           src={"/icons/arrow-right.svg"}
@@ -72,7 +98,7 @@ export default function ProjectItem({ project, isActive }: ProjectItemProps) {
           height={24}
           alt="자세히 보러가기"
         />
-      </Link>
-    </div>
+      </span>
+    </Link>
   );
 }

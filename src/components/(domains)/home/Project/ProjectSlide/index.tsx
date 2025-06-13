@@ -5,7 +5,7 @@ import classNames from "classnames/bind";
 import { PROJECTS } from "@/libs/constants";
 import ProjectItem from "../ProjectItem";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Navigation, Scrollbar, Mousewheel, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -15,18 +15,22 @@ const cx = classNames.bind(styles);
 
 export default function ProjectSlide() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const swiperRef = useRef(null);
 
   return (
     <div className={cx("swiper-container", "projects-list")}>
       <Swiper
         modules={[Navigation, Scrollbar, Mousewheel, Autoplay]}
         loop={true}
-        spaceBetween={-200}
-        slidesPerView={3}
         navigation={true}
         centeredSlides={true}
         autoplay={{
           delay: 2500
+        }}
+        breakpoints={{
+          640: { slidesPerView: 1, spaceBetween: 0 },
+          768: { slidesPerView: 3, spaceBetween: -250 },
+          1024: { slidesPerView: 2.5, spaceBetween: -250 }
         }}
         onSlideChange={swiper => setActiveIndex(swiper.realIndex)}>
         {PROJECTS.map((project, index) => (

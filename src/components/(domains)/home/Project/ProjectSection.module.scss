@@ -1,4 +1,29 @@
 .project-slide-wrapper {
   @include flexbox();
-  height: 100%;
+  height: calc(100% - 38rem);
+}
+
+.btn-line {
+  @include flexbox(end);
+
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 140rem;
+
+  & .button {
+    padding: 0.8rem;
+    background-color: $primary-200;
+  }
+}
+
+.list {
+  @include flexbox(start);
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 100%;
+  max-width: 140rem;
+  margin: 0 auto;
+  padding-bottom: 15rem;
+  height: calc(100% - 38rem);
+  overflow-y: scroll;
 }
