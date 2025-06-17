@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 
-
 type PageArray = any[];
 
 export const useFullPage = (pageObjArray: PageArray) => {
@@ -16,9 +15,6 @@ export const useFullPage = (pageObjArray: PageArray) => {
       if (targetSection) {
         isScrollingRef.current = true;
         targetSection.scrollIntoView({ behavior: "smooth" });
-
-        // 스크롤 종료 후 isScrollingRef를 false로 설정합니다.
-        // smooth 스크롤의 duration에 따라 적절한 시간을 설정해야 합니다.
         // 정확한 스크롤 종료 시점을 알기 어렵기 때문에 임의의 시간(예: 1000ms)을 설정하거나,
         // transitionend 이벤트를 활용하는 등의 방법이 있습니다. 여기서는 임의 시간을 사용합니다.
         setTimeout(() => {
@@ -29,7 +25,6 @@ export const useFullPage = (pageObjArray: PageArray) => {
     },
     [] // sectionRefs는 useRef로 생성되므로 변경되지 않습니다.
   );
-
 
   useEffect(() => {
     const wrapElement = wrapRef.current;
@@ -64,13 +59,13 @@ export const useFullPage = (pageObjArray: PageArray) => {
     return () => {
       wrapElement.removeEventListener("wheel", handleWheel);
     };
-  }, [currentSectionIndex, pageObjArray.length, scrollToSection]); 
+  }, [currentSectionIndex, pageObjArray.length, scrollToSection]);
 
   return {
     wrapRef,
     sectionRefs,
     currentSectionIndex,
-    scrollToSection,
+    scrollToSection
   };
 };
 

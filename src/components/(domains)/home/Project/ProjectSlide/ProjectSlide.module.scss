@@ -6,9 +6,9 @@
   :global(.swiper) {
     max-width: 100rem;
     height: 73vh;
-    top: 10rem;
     @include responsive("T") {
       width: 100%;
+      top: 0;
     }
   }
   :global(.swiper-wrapper) {

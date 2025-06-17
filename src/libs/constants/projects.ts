@@ -38,14 +38,14 @@ export const BINDER: Project = {
   period: "2024.09 - 2024.10",
   address: "https://www.bin-finder.net/",
   gitRepo: "https://github.com/binder-binFinder/binder-front-end",
-  troubleShootings: [
-    {
-      title: "",
-      problemSituation: "",
-      process: [],
-      result: []
-    }
-  ],
+  // troubleShootings: [
+  //   {
+  //     title: "",
+  //     problemSituation: "",
+  //     process: [],
+  //     result: []
+  //   }
+  // ],
   myJobs: [
     {
       description:
@@ -165,9 +165,7 @@ export const GLOBAL_NOMAD: Project = {
     {
       description: "체험 추가, 수정 페이지를 구현했습니다.",
       img: "/images/global-nomad/add-activity.png"
-    },
-    { description: "", img: "" },
-    { description: "", img: "" }
+    }
   ]
 };
 
@@ -220,12 +218,12 @@ export const TASKIFY: Project = {
         "사용자 경험이 크게 향상되어 페이지 로딩 시간이 거의 없을 정도로 빨라졌고, 부드러운 UI 전환으로 더 나은 사용자 경험을 제공하게 되었습니다."
       ]
     }
-  ],
-  myJobs: [
-    { description: "", img: "" },
-    { description: "", img: "" },
-    { description: "", img: "" }
   ]
+  // myJobs: [
+  //   { description: "", img: "" },
+  //   { description: "", img: "" },
+  //   { description: "", img: "" }
+  // ]
 };
 
 export const ROLLING: Project = {
@@ -247,20 +245,20 @@ export const ROLLING: Project = {
     "추억의 롤링 페이퍼를 웹 상에서도 간편하게 즐길 수 있는 플랫폼"
   ],
   logo: "/icons/rolling-logo.svg",
-  textLogo: "/icons/rolling-text-logo.svg",
-  troubleShootings: [
-    {
-      title: "",
-      problemSituation: "",
-      process: [],
-      result: []
-    }
-  ],
-  myJobs: [
-    { description: "", img: "" },
-    { description: "", img: "" },
-    { description: "", img: "" }
-  ]
+  textLogo: "/icons/rolling-text-logo.svg"
+  // troubleShootings: [
+  //   {
+  //     title: "",
+  //     problemSituation: "",
+  //     process: [],
+  //     result: []
+  //   }
+  // ],
+  // myJobs: [
+  //   { description: "", img: "" },
+  //   { description: "", img: "" },
+  //   { description: "", img: "" }
+  // ]
 };
 export const PROJECTS: Project[] = [
   WHIPLASH,

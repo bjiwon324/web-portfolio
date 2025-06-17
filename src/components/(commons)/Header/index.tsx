@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "./Header.module.scss";
 import classNames from "classnames/bind";
 import Link from "next/link";
-import { FULL_PAGE_OBJ_ARRAY } from "@/libs/constants";
+import { FULL_PAGE_OBJ_ARRAY, PROJECTS } from "@/libs/constants";
 import ToggleButton from "../ToggleButton";
 import { useToggle } from "@/libs/hooks";
 import { ThemeType } from "@/libs/types";
@@ -43,15 +43,26 @@ export default function Header({
               alt="홈페이지로 이동"
             />
           </Link>
-          <div className={cx("header-left")}>
-            <ToggleButton onClick={onClickTheme} />
-            <button
-              onClick={handleShowNavList}
-              className={cx("hamburger", { "is-active": isShowNavList })}>
-              <span className={cx("line")}></span>
-              <span className={cx("line")}></span>
-              <span className={cx("line")}></span>
-            </button>
+          <div className={cx("header-right")}>
+            <nav className={cx("nav")}>
+              <ToggleButton onClick={onClickTheme} />
+              <ul className={cx("nav-list", { show: isShowNavList })}>
+                {PROJECTS.map(project => (
+                  <li className={cx("nav-item")}>
+                    <Link href={`/project/${[project.name]}`}>
+                      {project.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <button
+                onClick={handleShowNavList}
+                className={cx("hamburger", { "is-active": isShowNavList })}>
+                <span className={cx("line")}></span>
+                <span className={cx("line")}></span>
+                <span className={cx("line")}></span>
+              </button>
+            </nav>
           </div>
         </div>
       </header>

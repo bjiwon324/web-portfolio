@@ -20,8 +20,8 @@ export default function AboutSection() {
           <Image
             src={"/icons/logo.svg"}
             alt="logo"
-            width={150}
-            height={50}
+            width={100}
+            height={26}
           />
           <p className={cx("description")}>
             문제 해결과 사용자 경험을 개선하는 데서 즐거움을 느끼는 프론트엔드

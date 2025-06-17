@@ -5,6 +5,7 @@ import styles from "./page.module.scss";
 import { useDarkMode, useFullPage } from "@/libs/hooks";
 import { FULL_PAGE_OBJ_ARRAY } from "@/libs/constants/fullPageObjArray";
 import Header from "@/components/(commons)/Header";
+import SideNav from "@/components/(domains)/home/SideNav";
 
 const cx = classNamesBind.bind(styles);
 
@@ -26,6 +27,7 @@ export default function Home() {
           onClickTheme={handleClickTheme}
           theme={theme}
         />
+        <SideNav activeIndex={currentSectionIndex} />
         <main className={cx("main")}>
           {FULL_PAGE_OBJ_ARRAY.map((pageObj, index) => (
             <section
@@ -34,6 +36,7 @@ export default function Home() {
               ref={(el: HTMLElement | null) => {
                 sectionRefs.current[index] = el;
               }}
+              aria-label={pageObj.name}
               className={cx("full-section", `section${index}`, pageObj.name, {
                 active: index === currentSectionIndex
               })}>

@@ -14,6 +14,11 @@
   word-break: keep-all;
 
   line-height: 5rem; /* 104.167% */
+
+  @include responsive("M") {
+    font-size: 3.2rem;
+    line-height: 3.5rem;
+  }
 }
 
 .main {

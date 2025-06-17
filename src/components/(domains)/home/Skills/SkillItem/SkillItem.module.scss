@@ -5,11 +5,26 @@
   padding: 1.6rem;
   transition: transform 0.3s ease;
 
+  @include responsive("M") {
+    gap: 0.8rem;
+    padding: 0.8rem;
+  }
+
   // background-color: $primary-200;
   & .img-box {
     position: relative;
     width: 5rem;
     height: 5rem;
+
+    @include responsive("T") {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    @include responsive("M") {
+      width: 2rem;
+      height: 2rem;
+    }
   }
   & img {
     object-fit: contain;
@@ -21,6 +36,11 @@
     & .img-box {
       width: 10rem;
       height: 10rem;
+
+      @include responsive("T") {
+        width: 5rem;
+        height: 5rem;
+      }
     }
     & .description {
       display: block;
@@ -34,6 +54,9 @@
 
 .name {
   @include text-style(1.8, 600);
+  @include responsive(T) {
+    @include text-style(1.6, 500);
+  }
 }
 
 .description {
