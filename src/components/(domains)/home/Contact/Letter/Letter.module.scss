@@ -108,6 +108,9 @@
       padding-top: 4rem;
     }
   }
+  @include responsive("M") {
+    padding: 0 2rem;
+  }
 }
 
 body[data-theme="dark"] .letter {

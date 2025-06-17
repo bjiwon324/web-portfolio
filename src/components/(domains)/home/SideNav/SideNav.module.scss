@@ -1,0 +1,27 @@
+.side-nav {
+  &-list {
+    @include column-flexbox;
+    position: fixed;
+    gap: 1rem;
+    right: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 200;
+
+    & li {
+      height: 2rem;
+    }
+
+    &-item {
+      display: inline-block;
+      border-radius: 2rem;
+      padding: 1rem;
+      width: 1rem;
+      height: 1rem;
+
+      &.active {
+        background-color: $point-orange;
+      }
+    }
+  }
+}

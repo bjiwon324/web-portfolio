@@ -17,7 +17,7 @@
 .goHome {
   padding: 1rem 0;
 }
-.header-left {
+.header-right {
   @include flexbox(end);
 }
 .nav {
@@ -141,17 +141,19 @@ body[data-theme="dark"] .header {
 @include responsive("M") {
   .nav-list {
     opacity: 0;
+    visibility: hidden;
     position: absolute;
     flex-wrap: wrap;
     top: 4rem;
     right: -5rem;
     padding: 1rem 2rem;
-    transition: all 0.3s;
+    transition: all 0.5s;
     justify-content: center;
   }
 
   .nav-list.show {
     opacity: 1;
+    visibility: visible;
     width: fit-content;
     height: auto;
     right: -2rem;

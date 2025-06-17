@@ -1,6 +1,10 @@
 .project-slide-wrapper {
   @include flexbox();
   height: calc(100% - 38rem);
+  margin-top: 15rem;
+  @include responsive("M") {
+    margin-top: 18rem;
+  }
 }
 
 .btn-line {
@@ -11,8 +15,9 @@
   max-width: 140rem;
 
   & .button {
-    padding: 0.8rem;
+    padding: 0.4rem;
     background-color: $primary-200;
+    cursor: pointer;
   }
 }
 
@@ -26,4 +31,7 @@
   padding-bottom: 15rem;
   height: calc(100% - 38rem);
   overflow-y: scroll;
+
+  @include responsive("T") {
+  }
 }

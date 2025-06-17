@@ -6,7 +6,7 @@
   max-width: 140rem;
 
   @include responsive("T") {
-    padding: 2rem;
+    padding: 5rem 2rem;
   }
 }
 
@@ -19,6 +19,8 @@
 
   @include responsive("M") {
     flex-direction: column;
+    gap: 2rem;
+    padding-top: 3rem;
   }
 }
 
@@ -63,4 +65,8 @@
 
 .description {
   margin: 2rem 0;
+  @include responsive("M") {
+    margin: 0.8rem 0;
+    font-size: 1.4rem;
+  }
 }
