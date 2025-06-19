@@ -2,6 +2,7 @@
   @include pos-center();
   width: 100%;
   max-width: 140rem;
+  text-align: center;
   margin: 0 auto;
   gap: 1rem;
 
@@ -12,7 +13,7 @@
 
     &:first-child {
       @include flexbox();
-      margin: 0 auto 12rem;
+      margin: 0 auto 8rem;
 
       @include responsive("M") {
         width: 100%;

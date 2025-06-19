@@ -71,7 +71,7 @@
     min-width: none;
   }
 }
-body[data-theme="dark"] {
+html[data-theme="dark"] body {
   .name,
   .description {
     color: $background-white;

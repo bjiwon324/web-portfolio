@@ -31,6 +31,6 @@
   }
 }
 
-body[data-theme="dark"] .name {
+html[data-theme="dark"] .name {
   color: $primary-300;
 }
