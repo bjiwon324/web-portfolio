@@ -5,23 +5,19 @@ import Link from "next/link";
 import { FULL_PAGE_OBJ_ARRAY, PROJECTS } from "@/libs/constants";
 import ToggleButton from "../ToggleButton";
 import { useToggle } from "@/libs/hooks";
-import { ThemeType } from "@/libs/types";
-import Modal from "../Modal";
-import useModal from "@/libs/hooks/useModal";
-
+import { useThemeStore } from "@/store/themeStore";
 const cx = classNames.bind(styles);
 interface HeaderProps {
-  theme: ThemeType;
-  onClickTheme: () => void;
   isHome?: boolean;
+  onClick: (index: number) => void;
 }
 
-export default function Header({
-  theme,
-  onClickTheme,
-  isHome = true
-}: HeaderProps) {
+export default function Header({ onClick, isHome = true }: HeaderProps) {
   const [isShowNavList, setIsShowNavList] = useToggle(false);
+  const theme = useThemeStore(state => state.theme);
+  console.log(theme);
+  const logoSrc =
+    theme === "dark" ? "/icons/logo-white.svg" : "/icons/logo.svg";
 
   const handleShowNavList = () => {
     setIsShowNavList();
@@ -38,17 +34,18 @@ export default function Header({
               className={cx("logo")}
               width={100}
               height={30}
-              style={{}}
-              src={"/icons/logo.svg"}
+              src={logoSrc}
               alt="홈페이지로 이동"
             />
           </Link>
           <div className={cx("header-right")}>
             <nav className={cx("nav")}>
-              <ToggleButton onClick={onClickTheme} />
+              <ToggleButton />
               <ul className={cx("nav-list", { show: isShowNavList })}>
                 {PROJECTS.map(project => (
-                  <li className={cx("nav-item")}>
+                  <li
+                    key={project.name}
+                    className={cx("nav-item")}>
                     <Link href={`/project/${[project.name]}`}>
                       {project.name}
                     </Link>
@@ -80,18 +77,18 @@ export default function Header({
             width={100}
             height={30}
             style={{ objectFit: "fill" }}
-            src={"/icons/logo.svg"}
+            src={logoSrc}
             alt="홈페이지로 이동"
           />
         </Link>
         <nav className={cx("nav")}>
-          <ToggleButton onClick={onClickTheme} />
+          <ToggleButton />
           <ul className={cx("nav-list", { show: isShowNavList })}>
-            {FULL_PAGE_OBJ_ARRAY.map(obj => (
+            {FULL_PAGE_OBJ_ARRAY.map((obj, index) => (
               <li
                 className={cx("nav-item")}
                 key={obj.name}>
-                <Link href={"#" + obj.name}>{obj.name}</Link>
+                <button onClick={() => onClick(index)}>{obj.name}</button>
               </li>
             ))}
           </ul>

@@ -2,7 +2,7 @@
 
 import classNamesBind from "classnames/bind";
 import styles from "./page.module.scss";
-import { useDarkMode, useFullPage } from "@/libs/hooks";
+import { useFullPage } from "@/libs/hooks";
 import { FULL_PAGE_OBJ_ARRAY } from "@/libs/constants/fullPageObjArray";
 import Header from "@/components/(commons)/Header";
 import SideNav from "@/components/(domains)/home/SideNav";
@@ -13,21 +13,16 @@ export default function Home() {
   const { wrapRef, sectionRefs, currentSectionIndex, scrollToSection } =
     useFullPage(FULL_PAGE_OBJ_ARRAY);
 
-  const { theme, setTheme } = useDarkMode();
-  const handleClickTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
-
   return (
     <>
       <div
         ref={wrapRef}
         className={cx("wrap")}>
-        <Header
-          onClickTheme={handleClickTheme}
-          theme={theme}
+        <Header onClick={scrollToSection} />
+        <SideNav
+          activeIndex={currentSectionIndex}
+          onClick={scrollToSection}
         />
-        <SideNav activeIndex={currentSectionIndex} />
         <main className={cx("main")}>
           {FULL_PAGE_OBJ_ARRAY.map((pageObj, index) => (
             <section

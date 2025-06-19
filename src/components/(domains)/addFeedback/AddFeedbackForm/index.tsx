@@ -16,6 +16,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { addFeedback } from "@/libs/apis/addFeedback";
 import Button from "@/components/(commons)/Button";
 import { useRouter } from "next/navigation";
+import { useThemeStore } from "@/store/themeStore";
 
 const Picker = dynamic(
   () => {
@@ -26,8 +27,9 @@ const Picker = dynamic(
 
 const cx = classNames.bind(styles);
 
-export default function AddFeedbackForm({ theme }: { theme: ThemeType }) {
+export default function AddFeedbackFor() {
   const router = useRouter();
+  const theme = useThemeStore(state => state.theme);
 
   const {
     register,
@@ -60,7 +62,6 @@ export default function AddFeedbackForm({ theme }: { theme: ThemeType }) {
     setValue("emoji", emojiObject.emoji);
     setShowPicker(false);
   };
-  console.log(errors);
 
   return (
     <form
