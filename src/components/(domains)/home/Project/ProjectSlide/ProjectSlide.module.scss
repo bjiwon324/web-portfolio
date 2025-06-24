@@ -23,7 +23,7 @@
     z-index: 3 !important;
   }
 }
-body[data-theme="dark"] {
+html[data-theme="dark"] body {
   .list-item {
     color: $primary-200;
   }

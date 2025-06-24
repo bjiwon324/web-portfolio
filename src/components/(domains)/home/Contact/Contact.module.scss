@@ -75,6 +75,6 @@
     }
   }
 }
-body[data-theme="dark"] .background {
+html[data-theme="dark"] .background {
   background-color: $text-black;
 }

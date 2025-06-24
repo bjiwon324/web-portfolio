@@ -38,7 +38,7 @@
   }
 }
 
-body[data-theme="dark"] .button-list .button-list-item button {
+html[data-theme="dark"] .button-list .button-list-item button {
   color: $background-white;
 
   &.selected {

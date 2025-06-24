@@ -1,32 +1,32 @@
 .button-background {
   @include flexbox(start);
-width: 4rem;
-height: 2.4rem;
-padding: 0.2rem 0.3rem;
-border-radius: 1.5rem;
-transition: all 0.3s;
-background-color: $primary-200;
-transform: translateX(0);
-
-& .inner {
-  width: 1.8rem;
-  height: 1.8rem;
-  border-radius: 5rem;
-  aspect-ratio: 1/1;
-  background-color: $primary-600;
-}
-
-&.isLeft {
-  & .inner {
-transform: translateX(80%);
-}
-}
-
-}
-body[data-theme='dark'] .button-background {
-  background-color: $primary-600;
-& .inner {
+  width: 4rem;
+  height: 2.4rem;
+  padding: 0.2rem 0.3rem;
+  border-radius: 1.5rem;
+  transition: all 0.3s;
   background-color: $primary-200;
+  transform: translateX(0);
 
+  & .inner {
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 5rem;
+    aspect-ratio: 1/1;
+    background-color: $primary-600;
+  }
+
+  &.isLeft {
+    & .inner {
+      transform: translateX(80%);
+    }
+  }
 }
+html[data-theme="dark"] body {
+  .button-background {
+    background-color: $primary-600;
+    & .inner {
+      background-color: $primary-200;
+    }
+  }
 }

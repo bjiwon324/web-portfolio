@@ -41,7 +41,7 @@
     }
   }
 }
-body[data-theme="dark"] {
+html[data-theme="dark"] body {
   .text {
     color: $primary-300;
   }

@@ -3,7 +3,6 @@
 import Header from "@/components/(commons)/Header";
 import styles from "./ProjectPage.module.scss";
 import classNames from "classnames/bind";
-import { useDarkMode } from "@/libs/hooks";
 import { PROJECTS } from "@/libs/constants";
 import { notFound, useParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -16,7 +15,6 @@ const cx = classNames.bind(styles);
 
 export default function ProjectPage() {
   const [projectInfo, setProjectInfo] = useState<Project | null>(null);
-  const { theme, setTheme } = useDarkMode();
   const params = useParams();
   useEffect(() => {
     const foundProject = PROJECTS.find(project => project.name === params.id);
@@ -34,17 +32,9 @@ export default function ProjectPage() {
   }
   const { matchedSkills, unmatchedSkills } = separateSkills(projectInfo.skills);
 
-  const handleClickTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
-
   return (
     <>
-      <Header
-        onClickTheme={handleClickTheme}
-        theme={theme}
-        isHome={false}
-      />
+      <Header isHome={false} />
       <main className={cx("main")}>
         <div className={cx("background-img")}>
           <Image

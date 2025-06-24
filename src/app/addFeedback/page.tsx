@@ -4,24 +4,15 @@ import Header from "@/components/(commons)/Header";
 import styles from "./AddFeedbackPage.module.scss";
 import classNames from "classnames/bind";
 import AddFeedbackForm from "@/components/(domains)/addFeedback/AddFeedbackForm";
-import { useDarkMode } from "@/libs/hooks";
 import localFont from "next/font/local";
 
 const cx = classNames.bind(styles);
 // const andongFont = localFont({ src: "../../../fonts/andong-subset.woff2" });
 
 export default function AddFeedbackPage() {
-  const { theme, setTheme } = useDarkMode();
-  const handleClickTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
   return (
     <>
-      <Header
-        theme={theme}
-        onClickTheme={handleClickTheme}
-        isHome={false}
-      />
+      <Header isHome={false} />
 
       <main className={cx("main")}>
         <article>
@@ -32,8 +23,7 @@ export default function AddFeedbackPage() {
           </p>
         </article>
         <AddFeedbackForm
-          // classNames={andongFont.className}
-          theme={theme}
+        // classNames={andongFont.className}
         />
       </main>
     </>

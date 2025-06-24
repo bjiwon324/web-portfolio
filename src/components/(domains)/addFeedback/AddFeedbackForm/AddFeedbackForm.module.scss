@@ -23,6 +23,6 @@
   }
 }
 
-body[data-theme="dark"] .text {
+html[data-theme="dark"] .text {
   color: $primary-200;
 }

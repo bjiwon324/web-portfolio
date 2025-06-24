@@ -8,29 +8,30 @@ const cx = classNames.bind(styles);
 
 interface SideNavProps {
   activeIndex: number;
+  onClick: (index: number) => void;
 }
 
-export default function SideNav({ activeIndex }: SideNavProps) {
+export default function SideNav({ activeIndex, onClick }: SideNavProps) {
+  console.log(activeIndex);
   const img = (i: number) =>
     activeIndex === i
       ? "/icons/side-nav-item-active.svg"
       : "/icons/side-nav-item.svg";
-  console.log(activeIndex);
   return (
     <ul className={cx("side-nav-list")}>
       {FULL_PAGE_OBJ_ARRAY.map((pageObj, i) => (
         <li key={pageObj.name}>
-          <Link
+          <button
             aria-labelledby={pageObj.name}
             className={cx("side-nav-item", { active: activeIndex === i })}
-            href={`#${pageObj.name}`}>
+            onClick={() => onClick(i)}>
             <Image
               alt="navigation item"
               width={10}
               height={10}
               src={img(i)}
             />
-          </Link>
+          </button>
         </li>
       ))}
     </ul>

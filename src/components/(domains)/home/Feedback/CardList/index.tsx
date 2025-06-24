@@ -26,7 +26,6 @@ export default function CardList({ showingStatus }: CardListProps) {
         .from("feedback-project")
         .select("*");
       if (error) throw new Error(error.message);
-      console.log("ddd", data);
       return data;
     },
     enabled: showingStatus === "project"

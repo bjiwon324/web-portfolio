@@ -34,13 +34,15 @@
   @include text-style(1.4, solid, $point-orange);
 }
 
-body[data-theme="dark"] .label {
-  color: $primary-400;
-}
-body[data-theme="dark"] .input {
-  background-color: $primary;
-  color: $primary-200;
-  &:focus {
-    outline: 1px solid $primary-300;
+html[data-theme="dark"] body {
+  .label {
+    color: $primary-400;
+  }
+  .input {
+    background-color: $primary;
+    color: $primary-200;
+    &:focus {
+      outline: 1px solid $primary-300;
+    }
   }
 }
