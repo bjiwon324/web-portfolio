@@ -23,6 +23,7 @@ export default function Home() {
           activeIndex={currentSectionIndex}
           onClick={scrollToSection}
         />
+        <SideNav activeIndex={currentSectionIndex} />
         <main className={cx("main")}>
           {FULL_PAGE_OBJ_ARRAY.map((pageObj, index) => (
             <section
