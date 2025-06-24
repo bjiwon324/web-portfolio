@@ -9,13 +9,12 @@ import { useThemeStore } from "@/store/themeStore";
 const cx = classNames.bind(styles);
 interface HeaderProps {
   isHome?: boolean;
-  onClick: (index: number) => void;
+  onClick?: (index: number) => void;
 }
 
 export default function Header({ onClick, isHome = true }: HeaderProps) {
   const [isShowNavList, setIsShowNavList] = useToggle(false);
   const theme = useThemeStore(state => state.theme);
-  console.log(theme);
   const logoSrc =
     theme === "dark" ? "/icons/logo-white.svg" : "/icons/logo.svg";
 
@@ -88,7 +87,7 @@ export default function Header({ onClick, isHome = true }: HeaderProps) {
               <li
                 className={cx("nav-item")}
                 key={obj.name}>
-                <button onClick={() => onClick(index)}>{obj.name}</button>
+                <button onClick={() => onClick?.(index)}>{obj.name}</button>
               </li>
             ))}
           </ul>
