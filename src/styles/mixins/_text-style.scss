@@ -1,6 +1,10 @@
-@mixin text-style($size, $weight: 400, $color: false) {
+@mixin text-style($size, $weight: 400, $color: $text-black) {
   font-size: $size * 1rem;
   font-weight: $weight;
+
+  html[data-theme="dark"] {
+    color: $background-white;
+  }
 
   @if (type-of($color) == color) {
     color: $color;
