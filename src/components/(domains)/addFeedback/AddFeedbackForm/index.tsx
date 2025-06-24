@@ -49,7 +49,7 @@ export default function AddFeedbackFor() {
   const { mutate, isPending, error } = useMutation({
     mutationFn: (data: FeedbackFormValues) => addFeedback(data),
     onSuccess: () => {
-      alert("성공");
+      alert("의견 남겨주셔서 감사합니다.☺️");
       router.push("/#feedback");
     }
   });
