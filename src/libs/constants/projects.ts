@@ -5,7 +5,7 @@ export const WHIPLASH: Project = {
   role: "ALL",
   team: "private",
   period: "3일",
-  address: "",
+  address: "https://elegant-gingersnap-09d3ef.netlify.app/",
   gitRepo: "https://github.com/bjiwon324/whiplash-fan-page",
   logo: "/icons/Whiplash-logo.svg",
   skills: ["photoshop", "illustrator", "HTML", "CSS", "Javascript", "JQuery"],

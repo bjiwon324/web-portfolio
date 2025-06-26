@@ -1,6 +1,5 @@
 .button-list {
   @include flexbox(between);
-  @include text-style(2, 500, $text-black);
   width: 100%;
   max-width: 140rem;
   padding: 4rem 0 2rem;
@@ -8,12 +7,16 @@
 
   &-left {
     @include flexbox(start);
+
     gap: 3.2rem;
   }
+  &-item button {
+    @include text-style(2, 500, $text-black);
 
-  & .selected {
-    font-weight: 600;
-    color: $point-orange;
+    &.selected {
+      font-weight: 600;
+      color: $point-orange;
+    }
   }
 
   @include responsive("T") {
