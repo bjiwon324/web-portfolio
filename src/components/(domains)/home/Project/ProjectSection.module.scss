@@ -15,7 +15,10 @@
   max-width: 140rem;
 
   & .button {
-    padding: 0.4rem;
+    @include flexbox();
+
+    gap: 0.4rem;
+    padding: 0.4rem 0.8rem;
     border-radius: 1rem;
     background-color: $primary-200;
     cursor: pointer;
@@ -25,7 +28,7 @@
 html[data-theme="dark"] {
   .button {
     background-color: $primary-600;
-
+    color: $background-white;
   }
 }
 

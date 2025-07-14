@@ -101,22 +101,26 @@
   // transform: scaleX(1);
 }
 
-.nav-item > button {
+.nav-item > button,
+.nav-item > a {
   @include text-style(1.8, 500);
   padding: 1.6rem;
 }
 
-.nav-item:hover button {
+.nav-item:hover button,
+.nav-item:hover a {
   @include text-style(1.8, 500, $primary-700);
 }
 
 html[data-theme="dark"] .header {
   box-shadow: 0px 2px 5px rgba($primary, $alpha: 0.3);
 
-  & .nav-item > button {
+  & .nav-item > button,
+  .nav-item > a {
     color: $background-white;
   }
-  & .nav-item:hover > button {
+  & .nav-item:hover > button,
+  .nav-item:hover > a {
     @include text-style(1.8, 500, $primary-300);
   }
 

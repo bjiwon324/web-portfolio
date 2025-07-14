@@ -28,7 +28,7 @@ export default function Header({ onClick, isHome = true }: HeaderProps) {
         <div className={cx("header-wrapper")}>
           <Link
             className={cx("goHome")}
-            href={"/"}>
+            href={"/#project"}>
             <Image
               className={cx("logo")}
               width={100}

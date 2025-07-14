@@ -150,3 +150,15 @@
     }
   }
 }
+
+html[data-theme="dark"] {
+  .title,
+  .little-title,
+  .mid-title,
+  .link-text,
+  .skill-item.unmatched > span,
+  .role-text,
+  .trouble-shooting-process-title {
+    color: $background-white;
+  }
+}
