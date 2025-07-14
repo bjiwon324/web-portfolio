@@ -13,6 +13,8 @@ const cx = classNames.bind(styles);
 export default function ProjectSection() {
   const [isSlide, setIsSlide] = useToggle(true);
 
+  const toggleBtnText = isSlide ? "표로 보기" : "슬라이드로 보기";
+
   const toggleBtnImage = isSlide
     ? "/icons/menu-grid-icon.svg"
     : "/icons/carousel-icon.svg";
@@ -22,8 +24,10 @@ export default function ProjectSection() {
         <button
           className={cx("button")}
           onClick={setIsSlide}>
+          {toggleBtnText}
           <Image
             src={toggleBtnImage}
+            className={cx("button-img")}
             alt="슬라이드/리스트 토글버튼"
             width={34}
             height={34}
