@@ -79,7 +79,7 @@ export const SKILLS: Skills[] = [
     id: 22,
     name: "Notion",
     logo: "/icons/Notion-logo.svg",
-    description: "협업 툴로 활용"
+    description: "협업 툴로 활용 가능"
   },
   {
     id: 23,
@@ -93,12 +93,22 @@ export const SKILLS: Skills[] = [
     logo: "/icons/illustrator-icon.svg",
     description: "활용 가능"
   },
-  { id: 25, name: "JQuery", logo: "/icons/JQuery-Logo.svg", description: "" },
-  { id: 26, name: "Axios", logo: "/icons/axios-logo.svg", description: "" },
+  {
+    id: 25,
+    name: "JQuery",
+    logo: "/icons/JQuery-Logo.svg",
+    description: "활용 가능"
+  },
+  {
+    id: 26,
+    name: "Axios",
+    logo: "/icons/axios-logo.svg",
+    description: "axios를 사용한 API요청을 선호"
+  },
   {
     id: 27,
     name: "tailwindCSS",
-    logo: "/icons/tailwind-CSS-logo-1.svg",
-    description: ""
+    logo: "/icons/tailwind-CSS-logo.svg",
+    description: "테일윈드로 페이지 제작 가능"
   }
 ];
