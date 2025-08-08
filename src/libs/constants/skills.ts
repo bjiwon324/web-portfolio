@@ -108,7 +108,7 @@ export const SKILLS: Skills[] = [
   {
     id: 27,
     name: "tailwindCSS",
-    logo: "/icons/tailwind-CSS-logo.svg",
+    logo: "/icons/tailwind-css-logo.svg",
     description: "테일윈드로 페이지 제작 가능"
   }
 ];
