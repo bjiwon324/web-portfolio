@@ -110,5 +110,11 @@ export const SKILLS: Skills[] = [
     name: "tailwindCSS",
     logo: "/icons/tailwind-css-logo.svg",
     description: "테일윈드로 페이지 제작 가능"
+  },
+  {
+    id: 28,
+    name: "zustand",
+    logo: "/icons/zustand-icon.svg",
+    description: "웹포트폴리오 다크모드 구현을 위해 사용"
   }
 ];
