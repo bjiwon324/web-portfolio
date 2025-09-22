@@ -1,12 +1,14 @@
 .card {
   @include column-flexbox(start, start);
   position: relative;
+  width: 100%;
   // min-width: 29rem;
   padding: 2rem;
   gap: 1rem;
   flex-shrink: 0;
   background-color: $card-backGround;
   aspect-ratio: 1.618/1;
+  overflow: hidden;
 
   &-emoji-box {
     font-size: 3.2rem;
@@ -16,23 +18,44 @@
     text-align: center;
     gap: 1rem;
     align-self: stretch;
+
+    &.isModal {
+      font-size: 6rem;
+    }
   }
 
   &-text-box {
     @include column-flexbox(start, start);
     align-self: stretch;
-    flex-grow: 1;
 
     gap: 1rem;
     &-writer {
-      @include text-style(1.8, 600, $primary-700);
+      @include text-style(2, 600, $primary-700);
     }
 
     &-feedback {
       @include text-style(1.6, 400, $primary-700);
-
+      text-align: start;
       white-space: wrap;
       word-break: keep-all;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+
+      &.isModal {
+        overflow: visible;
+        display: inline-block;
+        line-height: 1.6;
+        font-size: 1.8rem;
+        font-weight: 500;
+      }
+
+      @include responsive("M") {
+        overflow: visible;
+        display: inline-block;
+      }
     }
   }
 
@@ -44,6 +67,7 @@
   @include responsive("M") {
     height: fit-content;
     aspect-ratio: auto;
+    pointer-events: none;
   }
 }
 

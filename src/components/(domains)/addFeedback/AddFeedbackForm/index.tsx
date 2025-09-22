@@ -67,16 +67,9 @@ export default function AddFeedbackFor() {
     <form
       className={cx("form")}
       onSubmit={handleSubmit(onSubmit)}>
-      <Button
-        className={cx("form-btn")}
-        type="submit"
-        size="M">
-        글쓰기
-      </Button>
       <Input
         id="writer"
         label="이름"
-        // isError={errors.writer}
         errorMessage={errors.writer?.message}
         {...register("writer", { required: "이름은 필수입니다" })}
         isError={!!errors.writer}
@@ -117,6 +110,12 @@ export default function AddFeedbackFor() {
           type="submit">
           글쓰기
         </Button> */}
+      <Button
+        className={cx("form-btn")}
+        type="submit"
+        size="L">
+        글쓰기
+      </Button>
     </form>
   );
 }

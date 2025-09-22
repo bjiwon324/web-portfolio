@@ -42,10 +42,12 @@ export default function ProjectSection() {
         <article>
           <ul className={cx("list")}>
             {PROJECTS.map(project => (
-              <ProjectItem
-                isList
-                project={project}
-              />
+              <li key={project.name}>
+                <ProjectItem
+                  isList
+                  project={project}
+                />
+              </li>
             ))}
           </ul>
         </article>
