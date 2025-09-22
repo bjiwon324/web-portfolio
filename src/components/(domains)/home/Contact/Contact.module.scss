@@ -3,7 +3,7 @@
   background-color: $primary-200;
   width: 100%;
   height: 100%;
-  z-index: 5;
+  z-index: 3;
   overflow: hidden;
 
   &-wrap {
@@ -14,6 +14,7 @@
     transform: translate(-50%, -50%);
     aspect-ratio: 45/32;
     background-color: $primary-700;
+    z-index: 5;
 
     @include responsive("T") {
       width: calc(100% - 4rem);
@@ -29,7 +30,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: 5;
+    z-index: 7;
 
     transform-origin: top;
     transform: rotateX(0deg);
@@ -39,6 +40,27 @@
       transform: rotateX(180deg);
       & .contact-title {
         opacity: 0;
+      }
+    }
+    & .contact-title {
+      @include text-style(14, 400, $background-white);
+      position: absolute;
+      white-space: nowrap;
+      width: 100%;
+      text-align: center;
+      opacity: 1;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -30%);
+      font-family: var(--font-Dynalight);
+      transition: all 0.4s;
+
+      @include responsive("T") {
+        font-size: 10rem;
+      }
+
+      @include responsive("M") {
+        font-size: 7rem;
       }
     }
   }
@@ -51,28 +73,6 @@
     background-size: contain;
     background-repeat: no-repeat;
     z-index: 4;
-  }
-
-  & .contact-title {
-    @include text-style(14, 400, $background-white);
-    position: absolute;
-    white-space: nowrap;
-    width: 100%;
-    text-align: center;
-    opacity: 1;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -30%);
-    font-family: var(--font-Dynalight);
-    transition: all 0.4s;
-
-    @include responsive("T") {
-      font-size: 10rem;
-    }
-
-    @include responsive("M") {
-      font-size: 7rem;
-    }
   }
 }
 html[data-theme="dark"] .background {

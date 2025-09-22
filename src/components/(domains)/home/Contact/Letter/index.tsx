@@ -65,8 +65,6 @@ export default function Letter({ isOpen, titleFont }: LetterProps) {
 
   return (
     <article className={cx("letter", { open: isOpen }, { lazy: letterZindex })}>
-      {/* <Header /> */}
-
       <h2 className={cx("letter-title", titleFont)}>Contact me</h2>
       <div className={cx("letter-inner")}>
         <EmailForm handleSubmitted={handleSubmitted} />

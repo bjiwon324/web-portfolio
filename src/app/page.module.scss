@@ -9,7 +9,9 @@
   height: 100vh;
   padding: 6rem 2rem;
   overflow-y: scroll;
+  position: relative;
 }
+
 .full-section::-webkit-scrollbar {
   display: none;
 }
