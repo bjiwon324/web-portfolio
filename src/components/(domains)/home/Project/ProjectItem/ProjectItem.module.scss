@@ -29,6 +29,7 @@
 .list-item {
   background: $primary-200;
   padding: 2rem;
+  width: 100%;
 
   .more {
     @include flexbox(start);
@@ -108,7 +109,6 @@
   }
 }
 .list-item {
-  width: calc(50% - 1rem);
   height: 38rem;
   position: relative;
   padding-bottom: 6rem;

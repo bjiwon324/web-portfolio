@@ -16,6 +16,7 @@ export default function Modal({ children, closeModal }: ModalProps) {
       <div
         className={cx("mask")}
         onClick={closeModal}></div>
+
       <div className={cx("inner")}>{children}</div>
     </ModalPortal>
   );

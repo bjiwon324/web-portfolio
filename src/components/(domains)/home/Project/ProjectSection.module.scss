@@ -43,6 +43,13 @@ html[data-theme="dark"] {
   height: calc(90vh - 12rem);
   overflow-y: scroll;
 
+  > li {
+    width: calc(50% - 1rem);
+  }
+
   @include responsive("T") {
+    > li {
+      width: 100%;
+    }
   }
 }
