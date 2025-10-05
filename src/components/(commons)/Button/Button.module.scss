@@ -31,6 +31,6 @@
   }
 
   @include responsive("M") {
-    @include text-style(1.6, 500);
+    @include text-style(1.6, 500, $primary-200);
   }
 }

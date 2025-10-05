@@ -6,12 +6,30 @@ import { useFullPage } from "@/libs/hooks";
 import { FULL_PAGE_OBJ_ARRAY } from "@/libs/constants/fullPageObjArray";
 import Header from "@/components/(commons)/Header";
 import SideNav from "@/components/(domains)/home/SideNav";
+import { useTouchScroll } from "@/libs/hooks/useTouchScroll";
+import { useEffect } from "react";
 
 const cx = classNamesBind.bind(styles);
 
 export default function Home() {
   const { wrapRef, sectionRefs, currentSectionIndex, scrollToSection } =
     useFullPage(FULL_PAGE_OBJ_ARRAY);
+
+  const { attachTouchHandlers } = useTouchScroll(
+    () => scrollToSection(currentSectionIndex + 1),
+    () => scrollToSection(currentSectionIndex - 1)
+  );
+
+  useEffect(() => {
+    if (window.innerWidth > 768) return;
+
+    const wrap = wrapRef.current;
+    const detach = attachTouchHandlers(wrap);
+
+    return () => {
+      if (detach) detach();
+    };
+  }, [attachTouchHandlers, wrapRef, currentSectionIndex, scrollToSection]);
 
   return (
     <>
