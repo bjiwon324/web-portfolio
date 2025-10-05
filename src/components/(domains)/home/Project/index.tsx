@@ -23,8 +23,8 @@ export default function ProjectSection() {
       <article className={cx("btn-line")}>
         <button
           className={cx("button")}
-          onClick={setIsSlide}>
-          {toggleBtnText}
+          onClick={setIsSlide}
+          title={toggleBtnText}>
           <Image
             src={toggleBtnImage}
             className={cx("button-img")}
