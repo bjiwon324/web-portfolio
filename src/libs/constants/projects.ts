@@ -33,7 +33,7 @@ export const BINDER: Project = {
   pointDescriptions: [
     "주변 공공 쓰레기통을 찾아주는 사이트",
     "초기 기획부터 서비스 홍보까지 팀원들과 함께 작업",
-    "스위프 기 해커톤 우승"
+    "스위프 6기 해커톤 우승"
   ],
   textLogo: "/icons/binder-logo-text.svg",
   logo: "/icons/binder-logo.svg",
