@@ -28,7 +28,7 @@ export default function Header({ onClick, isHome = true }: HeaderProps) {
         <div className={cx("header-wrapper")}>
           <Link
             className={cx("goHome")}
-            href={"/#project"}>
+            href={"/"}>
             <Image
               className={cx("logo")}
               width={100}
@@ -68,9 +68,9 @@ export default function Header({ onClick, isHome = true }: HeaderProps) {
   return (
     <header className={cx("header")}>
       <div className={cx("header-wrapper")}>
-        <Link
+        <button
           className={cx("goHome")}
-          href={"/"}>
+          onClick={() => window.location.reload()}>
           <Image
             className={cx("logo")}
             width={100}
@@ -79,7 +79,7 @@ export default function Header({ onClick, isHome = true }: HeaderProps) {
             src={logoSrc}
             alt="홈페이지로 이동"
           />
-        </Link>
+        </button>
         <nav className={cx("nav")}>
           <ToggleButton />
           <ul className={cx("nav-list", { show: isShowNavList })}>
