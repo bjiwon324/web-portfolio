@@ -15,7 +15,6 @@ const cx = classNames.bind(styles);
 
 export default function ProjectSlide() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const swiperRef = useRef(null);
 
   return (
     <div className={cx("swiper-container", "projects-list")}>
@@ -25,7 +24,7 @@ export default function ProjectSlide() {
         navigation={true}
         centeredSlides={true}
         autoplay={{
-          delay: 2500
+          delay: 4000
         }}
         breakpoints={{
           640: { slidesPerView: 1, spaceBetween: 0 },
