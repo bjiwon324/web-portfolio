@@ -31,9 +31,14 @@
   }
 
   @include responsive("M") {
-    & li:last-child {
-      width: 100%;
+    padding: 1rem 0;
 
+    & div {
+      width: 100%;
+      @include flexbox(between);
+    }
+    & .addFeedback-btn {
+      width: calc(100vw - 4rem) !important;
       & > a {
         float: right;
       }

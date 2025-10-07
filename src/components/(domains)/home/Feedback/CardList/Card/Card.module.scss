@@ -12,11 +12,9 @@
 
   &-emoji-box {
     font-size: 3.2rem;
-    margin: 1rem auto;
-    // min-height: 3.7rem;
+    height: 5rem; // min-height: 3.7rem;
     width: 100%;
     text-align: center;
-    gap: 1rem;
     align-self: stretch;
 
     &.isModal {
@@ -25,9 +23,8 @@
   }
 
   &-text-box {
-    @include column-flexbox(start, start);
+    @include column-flexbox(end, start);
     align-self: stretch;
-
     gap: 1rem;
     &-writer {
       @include text-style(2, 600, $primary-700);
@@ -61,7 +58,9 @@
 
   &-date {
     @include text-style(1.4, 400, $primary-400);
-    align-self: flex-end;
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
   }
 
   @include responsive("M") {
@@ -87,4 +86,10 @@
 }
 .card::after {
   right: 1rem;
+}
+
+.none-emoji {
+  & .card-text-box {
+    margin-top: 4rem;
+  }
 }

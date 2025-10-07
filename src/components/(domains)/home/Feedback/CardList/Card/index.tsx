@@ -1,6 +1,5 @@
 import classNames from "classnames/bind";
 import styles from "./Card.module.scss";
-import { ShowingStatus } from "../..";
 import { timeAgo } from "@/libs/utils";
 import useModal from "@/libs/hooks/useModal";
 import Modal from "@/components/(commons)/Modal";
@@ -23,7 +22,7 @@ export default function Card({ name, feedback, emoji, createdAt }: CardProps) {
   return (
     <>
       <button
-        className={cx("card")}
+        className={cx("card", { "none-emoji": !emoji })}
         onClick={openModal}>
         <CardInner
           emoji={emoji}

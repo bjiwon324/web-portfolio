@@ -45,7 +45,11 @@ export default function FeedBackSection() {
         </div>
         <li>
           <Link href={"addFeedback"}>
-            <Button size="M">글쓰기</Button>
+            <Button
+              className={cx("addFeedback-btn")}
+              size="M">
+              글쓰기
+            </Button>
           </Link>
         </li>
       </ul>
