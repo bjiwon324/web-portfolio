@@ -52,8 +52,8 @@ export default function ProjectPage() {
               <Image
                 src={projectInfo.logo}
                 alt={`${projectInfo.name} 바로가기`}
-                width={40}
-                height={40}
+                width={30}
+                height={30}
               />
               <span className={cx("link-text")}>사이트 바로가기</span>
             </Link>
@@ -63,8 +63,8 @@ export default function ProjectPage() {
               <Image
                 src={"/icons/github-mark.svg"}
                 alt={`${projectInfo.name} github 바로가기`}
-                width={40}
-                height={40}
+                width={30}
+                height={30}
               />
               <span className={cx("link-text")}>깃헙 바로가기</span>
             </Link>
@@ -101,6 +101,13 @@ export default function ProjectPage() {
             <h2 className={cx("mid-title")}>Descriptions</h2>
             <p>기간 : {projectInfo.period}</p>
             <ul className={cx("description-list", "list")}>
+              {projectInfo.report && (
+                <a
+                  className={cx("description-report")}
+                  href={projectInfo.report}>
+                  발표 자료 보러가기
+                </a>
+              )}
               {projectInfo.pointDescriptions.map((description, index) => (
                 <li
                   key={index}

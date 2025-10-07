@@ -13,6 +13,7 @@ export interface Project {
   textLogo?: string;
   troubleShootings?: Troubleshooting[];
   myJobs?: MyJob[];
+  report?: string;
 }
 
 export interface Troubleshooting {

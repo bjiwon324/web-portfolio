@@ -14,6 +14,8 @@ export const WHIPLASH: Project = {
 
 export const BINDER: Project = {
   name: "binder",
+  report:
+    "https://www.figma.com/deck/G0v3LES5oK7kD2a75jqnmd/Binder-PPT?node-id=5-117&t=9dQRvo03zUYcEcVC-1",
   skills: [
     "Next.js",
     "Vercel",
@@ -29,8 +31,9 @@ export const BINDER: Project = {
   ],
   role: "프론트엔드",
   pointDescriptions: [
-    "주변 공공 쓰레기통을 찾아주는 사이트입니다.",
-    "초기 기획부터 서비스 홍보까지 팀원들과 함께 작업했습니다."
+    "주변 공공 쓰레기통을 찾아주는 사이트",
+    "초기 기획부터 서비스 홍보까지 팀원들과 함께 작업",
+    "스위프 기 해커톤 우승"
   ],
   textLogo: "/icons/binder-logo-text.svg",
   logo: "/icons/binder-logo.svg",
