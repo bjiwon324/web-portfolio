@@ -9,22 +9,20 @@ const cx = classNames.bind(styles);
 
 export default function SkillList() {
   const [skillList, setSkillList] = useState<Skills[]>(SKILLS);
+  const [selected, setSelected] = useState<Skills>(SKILLS[0]);
 
-  const handleClickMoreInfo = (selected: Skills) => {
-    const selectedIndex = skillList.findIndex(
-      skill => skill.id === selected.id
-    );
-
-    if (selectedIndex > -1 && selectedIndex !== 0) {
-      const newSkillList = [...skillList];
-      const [itemToMove] = newSkillList.splice(selectedIndex, 1);
-      newSkillList.unshift(itemToMove);
-      setSkillList(newSkillList);
-    }
+  const handleClickMoreInfo = (skill: Skills) => {
+    setSelected(skill);
   };
 
   return (
     <ul className={cx("list")}>
+      <li>
+        <SkillItem
+          skill={selected}
+          onClick={handleClickMoreInfo}
+          selected={true}></SkillItem>
+      </li>
       {skillList.map((skill, index) => (
         <li
           className={cx("item")}
@@ -32,7 +30,7 @@ export default function SkillList() {
           <SkillItem
             skill={skill}
             onClick={handleClickMoreInfo}
-            selected={index === 0}
+            selected={false}
           />
         </li>
       ))}

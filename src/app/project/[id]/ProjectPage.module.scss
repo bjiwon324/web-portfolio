@@ -1,6 +1,8 @@
 .main {
   padding: 7rem 0;
   position: relative;
+  white-space: wrap;
+  word-break: keep-all;
   & .section {
     padding: 2rem !important;
     max-width: 140rem;
@@ -28,6 +30,19 @@
     }
   }
 
+  & .description {
+    &-list {
+      @include column-flexbox(start, start);
+
+      gap: 0.4rem;
+    }
+
+    &-report {
+      @include text-style(1.8, 500, $point-orange);
+      padding: 1rem 0;
+    }
+  }
+
   & .title {
     @include text-style(7, 900);
     margin: 2rem 0;
@@ -42,7 +57,7 @@
   }
 
   & .link {
-    @include text-style(2, 600);
+    @include text-style(1.8, 600);
     @include flexbox(start);
     gap: 0.5rem;
 

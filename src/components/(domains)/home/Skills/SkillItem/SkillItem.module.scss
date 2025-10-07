@@ -3,7 +3,6 @@
   gap: 1rem;
   flex-wrap: nowrap;
   padding: 1.6rem;
-  transition: transform 0.3s ease;
 
   @include responsive("M") {
     gap: 0.8rem;
@@ -31,7 +30,9 @@
   }
 
   &.selected {
+    transition: transform 0.3s ease;
     transform: translateY(-20%);
+    width: 100%;
     @include column-flexbox();
     & .img-box {
       width: 10rem;

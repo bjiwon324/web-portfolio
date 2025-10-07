@@ -7,7 +7,18 @@
   -moz-osx-font-smoothing: grayscale;
   font-family: $font-main;
   --swiper-navigation-color: $primary;
-  --swiper-theme-color: $primary;
+  --swiper-theme-color: $point-orange;
+  --swiper-navigation-size: 24px;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-weight: 900;
+}
+
+.swiper-button-prev:hover::after,
+.swiper-button-next:hover::after {
+  color: $point-orange;
 }
 
 html {
