@@ -12,7 +12,7 @@ export function useTouchScroll(onSwipeUp: () => void, onSwipeDown: () => void) {
     if (touchStartY.current === null || isScrolling.current) return;
 
     const deltaY = touchStartY.current - e.touches[0].clientY;
-    const threshold = 70;
+    const threshold = 140;
     if (Math.abs(deltaY) < threshold) return;
 
     isScrolling.current = true;
