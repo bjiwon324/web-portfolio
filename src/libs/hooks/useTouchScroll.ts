@@ -5,6 +5,8 @@ export function useTouchScroll(onSwipeUp: () => void, onSwipeDown: () => void) {
   const isScrolling = useRef(false);
 
   const handleTouchStart = (e: TouchEvent) => {
+    if (window.innerWidth > 768) return;
+
     touchStartY.current = e.touches[0].clientY;
   };
 

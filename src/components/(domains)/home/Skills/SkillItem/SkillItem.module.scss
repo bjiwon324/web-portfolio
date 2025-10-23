@@ -30,9 +30,15 @@
   }
 
   &.selected {
+    position: relative;
     transition: transform 0.3s ease;
-    transform: translateY(-20%);
-    width: 100%;
+    pointer-events: none;
+
+    left: 50%;
+    transform: translate(-50%, -20%);
+    filter: drop-shadow(0 0 5px rgba(67, 136, 88, 1))
+      drop-shadow(0 0 15px rgba(67, 136, 88, 0.8))
+      drop-shadow(0 0 45px rgba(67, 136, 88, 0.7));
     @include column-flexbox();
     & .img-box {
       width: 10rem;
@@ -46,10 +52,21 @@
     & .description {
       display: block;
     }
+
+    &:hover {
+      .name {
+        color: $text-black;
+      }
+    }
   }
 
-  &:hover .name {
-    color: $point-orange;
+  &:hover {
+    filter: drop-shadow(0 0 5px rgba(67, 136, 88, 1))
+      drop-shadow(0 0 15px rgba(67, 136, 88, 0.8))
+      drop-shadow(0 0 45px rgba(67, 136, 88, 0.7));
+    .name {
+      color: $point-orange;
+    }
   }
 }
 
@@ -76,6 +93,13 @@ html[data-theme="dark"] body {
   .name,
   .description {
     color: $background-white;
+  }
+  .selected {
+    &:hover {
+      .name {
+        color: $background-white;
+      }
+    }
   }
 
   .img-box {
