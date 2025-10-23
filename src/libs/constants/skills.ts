@@ -33,7 +33,7 @@ export const SKILLS: Skills[] = [
     name: "Tanstack Query",
     aliases: ["React Query"],
     logo: "/icons/tanstack-query-icon.svg",
-    description: ""
+    description: "자유롭게 사용가능"
   },
   {
     id: 16,

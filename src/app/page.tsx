@@ -2,11 +2,10 @@
 
 import classNamesBind from "classnames/bind";
 import styles from "./page.module.scss";
-import { useFullPage } from "@/libs/hooks";
+import { useFullPage, useTouchScroll } from "@/libs/hooks";
 import { FULL_PAGE_OBJ_ARRAY } from "@/libs/constants/fullPageObjArray";
 import Header from "@/components/(commons)/Header";
 import SideNav from "@/components/(domains)/home/SideNav";
-import { useTouchScroll } from "@/libs/hooks/useTouchScroll";
 import { useEffect } from "react";
 
 const cx = classNamesBind.bind(styles);

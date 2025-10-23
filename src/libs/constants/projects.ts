@@ -39,7 +39,7 @@ export const BINDER: Project = {
   logo: "/icons/binder-logo.svg",
   team: ["기획자 1 명", "디자이너 1명", "프론트엔드 2명", "백엔드 2명"],
   period: "2024.09 - 2024.10",
-  address: "https://www.bin-finder.net/",
+  address: "https://binder-front-end-324s-projects.vercel.app/",
   gitRepo: "https://github.com/binder-binFinder/binder-front-end",
   // troubleShootings: [
   //   {
