@@ -47,7 +47,7 @@
 
   .skill {
     &-wrapper {
-      margin: 3rem 0;
+      margin: 1.4rem 0;
     }
     &-title {
       @include text-style(1.8, 500);
@@ -73,9 +73,12 @@
   .description {
     @include text-style(1.6, 400);
     list-style-type: disc;
-    margin: 1rem 0 1rem 2rem;
+    margin: 0.5rem 0 1rem 1rem;
     white-space: wrap;
     word-break: keep-all;
+  }
+  .small-title {
+    @include text-style(1.6, 600, $primary-800);
   }
 
   .title-line {
@@ -109,7 +112,7 @@
   }
 }
 .list-item {
-  height: 38rem;
+  height: 50rem;
   position: relative;
   padding-bottom: 6rem;
   box-shadow: 3px 3px 6px 0px rgba(66, 87, 68, 0.4);

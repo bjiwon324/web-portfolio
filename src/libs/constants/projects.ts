@@ -9,7 +9,8 @@ export const WHIPLASH: Project = {
   gitRepo: "https://github.com/bjiwon324/whiplash-fan-page",
   logo: "/icons/Whiplash-logo.svg",
   skills: ["photoshop", "illustrator", "HTML", "CSS", "Javascript", "JQuery"],
-  pointDescriptions: ["화승 웹사이트를 벤치마킹한 whiplash 영화의 팬페이지"]
+  pointDescriptions: ["화승 웹사이트를 벤치마킹한 whiplash 영화의 팬페이지"],
+  myJobs: [{ description: "모든 작업 단독 수행" }]
 };
 
 export const BINDER: Project = {
@@ -51,23 +52,19 @@ export const BINDER: Project = {
   // ],
   myJobs: [
     {
-      description:
-        "Kakao map Api와 연동하여 쓰레기통의 위치를 지도에 나타내었습니다.",
+      description: "Kakao map Api와 연동하여 쓰레기통의 위치 나타냄",
       img: "/images/binder/bin-location.png"
     },
     {
-      description:
-        "react hook form 을 활용하여 쓰레기통 등록 기능을 구현하였습니다.",
+      description: "react hook form 을 활용하여 쓰레기통 등록 기능 구현",
       img: "/images/binder/add-new-location.png"
     },
     {
-      description:
-        "UX/UI를 고려하여 드롭다운 모달로 신고 기능을 구현하였습니다.",
+      description: "UX/UI를 고려하여 드롭다운 모달로 신고 기능 구현",
       img: "/images/binder/report-bin.png"
     },
     {
-      description:
-        "공통 컴포넌트를 적극활용하여 관리자 페이지의 심사기능을 구현하였습니다.",
+      description: "공통 컴포넌트를 활용하여 관리자 페이지의 심사기능 구현",
       img: "/images/binder/judgment-bin.png"
     }
   ]
@@ -150,23 +147,24 @@ export const GLOBAL_NOMAD: Project = {
   myJobs: [
     {
       description:
-        "디바이스 화면 크기에 따라 변화하는 컴포넌트를 구현하였습니다. 이 이미지는 데스크탑과 테블릿사이즈 일 때 디자인입니다.",
+        "Sass를 활용하여 반응형으로 화면이 크기에 따라 디자인, 세부 기능이 변화하는 컴포넌트 구현",
       img: "/images/global-nomad/floating-box.png"
     },
     {
-      description: "이 이미지는 모바일 화면에서의 디자인입니다.",
+      description: null,
       img: "/images/global-nomad/floating-box-mobile.png"
     },
     {
-      description: "모달 컴포넌트를 공통컴포넌트로 묶어 구현했습니다.",
+      description:
+        "Next.js를 사용하여 모든 모달 창을 효율적으로 구현하고 유지보수를 용이하게 관리하기 위해 단일화",
       img: "/images/global-nomad/modal1.png"
     },
     {
-      description: "제작 중 트러블 슈팅을 하단에 작성해두었습니다.",
+      description: null,
       img: "/images/global-nomad/modal2.png"
     },
     {
-      description: "체험 추가, 수정 페이지를 구현했습니다.",
+      description: "체험 추가, 수정 페이지 구현",
       img: "/images/global-nomad/add-activity.png"
     }
   ]
@@ -221,12 +219,19 @@ export const TASKIFY: Project = {
         "사용자 경험이 크게 향상되어 페이지 로딩 시간이 거의 없을 정도로 빨라졌고, 부드러운 UI 전환으로 더 나은 사용자 경험을 제공하게 되었습니다."
       ]
     }
+  ],
+  myJobs: [
+    {
+      description:
+        "Next.js 와 TanStack Query 를 활용하여 SSR 을 적용한 페이지 구현",
+      img: ""
+    },
+    {
+      description: "React Hook Form 을 활용 가능한 공통 인풋 컴포넌트 구현",
+      img: ""
+    },
+    { description: "해시 태그를 추가하는 인풋 구현", img: "" }
   ]
-  // myJobs: [
-  //   { description: "", img: "" },
-  //   { description: "", img: "" },
-  //   { description: "", img: "" }
-  // ]
 };
 
 export const ROLLING: Project = {
@@ -248,7 +253,7 @@ export const ROLLING: Project = {
     "추억의 롤링 페이퍼를 웹 상에서도 간편하게 즐길 수 있는 플랫폼"
   ],
   logo: "/icons/rolling-logo.svg",
-  textLogo: "/icons/rolling-text-logo.svg"
+  textLogo: "/icons/rolling-text-logo.svg",
   // troubleShootings: [
   //   {
   //     title: "",
@@ -257,11 +262,23 @@ export const ROLLING: Project = {
   //     result: []
   //   }
   // ],
-  // myJobs: [
-  //   { description: "", img: "" },
-  //   { description: "", img: "" },
-  //   { description: "", img: "" }
-  // ]
+  myJobs: [
+    {
+      description:
+        "emoji-picker-react 를 활용한 이모티콘 리스트 구현 및 최적화",
+      img: ""
+    },
+    {
+      description:
+        "레이아웃에서 큰 차이가 없는 페이지를 props를 활용하여 코드를 단순화",
+      img: "/images/rolling/rolling-prop.png"
+    },
+    {
+      description:
+        "공통으로 사용되는 컴포넌트를 최대한 세분화하여 재사용성을 높임",
+      img: ""
+    }
+  ]
 };
 export const PROJECTS: Project[] = [
   WHIPLASH,
