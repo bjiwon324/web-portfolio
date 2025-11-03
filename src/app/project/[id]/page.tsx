@@ -115,6 +115,14 @@ export default function ProjectPage() {
                   {description}
                 </li>
               ))}
+              {projectInfo.myJobs &&
+                projectInfo.myJobs.map((job, idx) => (
+                  <li
+                    key={idx}
+                    className={cx("description-item")}>
+                    {job.description}
+                  </li>
+                ))}
             </ul>
             <h2 className={cx("mid-title")}>Member</h2>
             {Array.isArray(projectInfo.team) && (

@@ -28,6 +28,6 @@ export interface Troubleshooting {
 }
 
 export interface MyJob {
-  description: string;
+  description: string | null;
   img?: string;
 }

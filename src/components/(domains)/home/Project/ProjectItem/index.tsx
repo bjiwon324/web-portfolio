@@ -88,6 +88,18 @@ export default function ProjectItem({
             {description}
           </li>
         ))}
+        <h5 className={cx("small-title")}>맡은 역할</h5>
+        {project.myJobs &&
+          project.myJobs.map(
+            (job, idx) =>
+              job.description !== null && (
+                <li
+                  className={cx("description")}
+                  key={idx}>
+                  {job.description}
+                </li>
+              )
+          )}
       </ul>
 
       <span className={cx("more")}>
